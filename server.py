@@ -14,7 +14,7 @@ bcrypt=Bcrypt(server)
 jwt=JWTManager(server)
 
 server.config["MONGODB_SETTINGS"]={
-        "host":"mongodb://localhost/scheduler"
+        "host":"mongodb+srv://servidor_social:elhuesodeduraznomelapelax4@schedulerbackend.lhw5y.mongodb.net/scheduler?retryWrites=true&w=majority"
         }
 
 initialize_db(server)
