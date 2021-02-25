@@ -6,20 +6,20 @@ from flask_jwt_extended import JWTManager
 from database.db import initialize_db
 from database.models import Alumno
 from resources.routes import initialize_routes
+import os
 
 server=Flask(__name__)
-server.config.from_envvar("SUPER_SECRET_KEY")
+enviroment_configuration=os.environ['CONFIGURATION_SETUP']
+server.config.from_object(enviroment_configuration)
+
 api=Api(server)
 bcrypt=Bcrypt(server)
 jwt=JWTManager(server)
 
-server.config["MONGODB_SETTINGS"]={
-        "host":"mongodb+srv://servidor_social:elhuesodeduraznomelapelax4@schedulerbackend.lhw5y.mongodb.net/scheduler?retryWrites=true&w=majority"
-        }
-
 initialize_db(server)
 initialize_routes(api)
-server.run()
+if __name__=="__main__":
+    server.run()
 #{
   #"matricula":"201756568",
   #"mail":"mycorreo2@mail.com",
