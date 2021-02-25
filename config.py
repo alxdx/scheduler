@@ -1,13 +1,19 @@
+import os 
+
 class Config(object):
     DEBUG = False
     TESTING = False
+    
+    MONGODATABASE=os.environ.get("MONGODATABASE")
     MONGODB_SETTINGS={
-        "host":"mongodb+srv://servidor_social:elhuesodeduraznomelapelax4@schedulerbackend.lhw5y.mongodb.net/scheduler?retryWrites=true&w=majority"
-}	
-    JWT_SECRET_KEY="elhuesodeduraznomelapelax3"
+        "host":MONGODATABASE
+    }
+    DEVELOPMENT_JWT_KEY=os.environ.get("DEVELOPMENT_JWT_KEY")
+    JWT_SECRET_KEY=DEVELOPMENT_JWT_KEY
 
 class ProductionConfig(Config):
-    JWT_SECRET_KEY="enProduccion3lHuesoTambienmeL4p3l4"
+    PRODUCTION_JWT_KEY=os.environ.get("PRODUCTION_JWT_KEY")
+    JWT_SECRET_KEY=PRODUCTION_JWT_KEY
     
 class DevelopmentConfig(Config):
     ENV="development"

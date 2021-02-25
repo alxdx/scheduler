@@ -12,6 +12,9 @@ server=Flask(__name__)
 enviroment_configuration=os.environ['CONFIGURATION_SETUP']
 server.config.from_object(enviroment_configuration)
 
+print("ENV= {}".format(server.config["ENV"]))
+print("DEBUG= {}".format(server.config["DEBUG"]))
+
 api=Api(server)
 bcrypt=Bcrypt(server)
 jwt=JWTManager(server)
