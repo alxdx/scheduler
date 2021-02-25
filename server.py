@@ -9,7 +9,7 @@ from resources.routes import initialize_routes
 import os
 
 server=Flask(__name__)
-enviroment_configuration=os.environ['CONFIGURATION_SETUP']
+enviroment_configuration=os.environ.get('CONFIGURATION_SETUP')
 server.config.from_object(enviroment_configuration)
 
 print("ENV= {}".format(server.config["ENV"]))
