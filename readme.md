@@ -2,20 +2,22 @@
 
 ### En la carpeta del propyecto ejecuta:
 
-pipenv install
-chmod +x run
+`pipenv install`
+`chmod +x run`
 
 #### Revisa si el entorno de python ya esta activado sino
 
-pipenv shell
+`pipenv shell`
 
 ### Ya activado el entorno de python:
 
-./run
+`./run`
 
 ---------------------------------------------------------
 json format para endpoint login:
 Note: se puede ingresar con la matricula o con el mail 
+   
+```javascript
 
 {"matricula":"201756567",
  "mail":"correo1@mail.com",
@@ -28,5 +30,5 @@ json format para endpoint signup:
  "mail":"correo1@mail.com",
 "password":"ajioajio"
 }
-
+```
 
