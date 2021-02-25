@@ -5,9 +5,7 @@ class Config(object):
     TESTING = False
     
     MONGODATABASE=os.environ.get("MONGODATABASE")
-    MONGODB_SETTINGS={
-        "host":MONGODATABASE
-    }
+    MONGODB_HOST=MONGODATABASE
     DEVELOPMENT_JWT_KEY=os.environ.get("DEVELOPMENT_JWT_KEY")
     JWT_SECRET_KEY=DEVELOPMENT_JWT_KEY
 
