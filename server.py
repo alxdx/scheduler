@@ -20,7 +20,7 @@ jwt=JWTManager(server)
 initialize_db(server)
 initialize_routes(api)
 if __name__=="__main__":
-    server.run()
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
 #{
   #"matricula":"201756568",
   #"mail":"mycorreo2@mail.com",
