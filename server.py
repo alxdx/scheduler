@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import Api
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 from database.db import initialize_db
 from database.models import Alumno
@@ -9,10 +10,11 @@ from resources.routes import initialize_routes
 import os
 
 server=Flask(__name__)
+CORS(server)
 enviroment_configuration=os.environ.get('CONFIGURATION_SETUP')
 server.config.from_object(enviroment_configuration)
-print("INFOOOOOOOOOOOOO:")
-print(enviroment_configuration)
+#print("INFOOOOOOOOOOOOO:")
+#print(enviroment_configuration)
 
 api=Api(server)
 bcrypt=Bcrypt(server)
