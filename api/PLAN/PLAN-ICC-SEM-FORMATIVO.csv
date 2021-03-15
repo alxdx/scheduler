@@ -1,0 +1,29 @@
+Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
+CCOS 251,Probabilidad y Estádistica,90,5,0,5,6,CCOS 008
+CCOS 252,Sistemas Operativos I,90,3,2,5,6,CCOS 005 y CCOS 013
+ICCS 250,Circuitos Electrónicos,90,3,2,5,6,ICCS 007
+ICCS 251,Programación Concurrente y Pararlela,90,3,2,5,6,CCOS 013 y ISCO 201
+CCOS 254,Sistemas Operativos II,90,3,2,5,6,CCOS 252
+ICCS 252,Programación Distribuida Aplicada,90,3,2,5,6,ICCS 251
+ICCS 253,Diseño Digital,90,3,2,5,6,ICCS 250
+ICCS 254,Teoría de Control,90,4,1,5,6,ICCS 006
+ICCS 255,Técnicas de Inteligencia Artificial,90,3,2,5,6,ISCO 201
+ISCC 201,Arquitectura de Computadoras,90,3,2,5,6,ICCS 253
+ICCS 259,Modelo de Redes,90,3,2,5,6,CCOS 251
+ICCS 257,Minería de Datos,90,3,2,5,6,CCOS 251
+ICCS 258,Desarrollo de Aplicaciones Web,90,3,2,5,6,IDDS 001
+ICCS 260,Redes Inalámbricas,90,3,2,5,6,ICCS 259
+ICCS 261,Administración de Redes,90,3,2,5,6,ICCS 260
+ICCS 256,Bases de Datos para Ingeniería,90,3,2,5,6,CCOS 013
+ICCS 262,Intercomunicación Seguridad en Redes,90,3,2,5,6,ICCS 261
+ISCO 200,Ingeniería de Software,90,3,2,5,6,CCOS 010
+ISCO 201,Análisis y Diseño de Algoritmos,90,5,0,5,6,CCOS 013
+ISCC 200,Desarrollo de Aplicaciones Móviles,90,3,2,5,6,ICCS 258
+ISCC 202,Sistemas Empotrados,90,3,2,5,6,ISCC 201
+IDDS 001,Administración de Proyectos,72/20,2,2,4,5,Nivel Básico
+IDDS 002,Proyectos I+D I,72/20,2,2,4,5,IDDS 001
+SSCC 100,Servicio Social,480,-,-,-,10,70% créditos cubiertos
+PPCc 101,Práctica Profesional,250,-,-,-,5,70% créditos cubiertos
+-,Optativa I,90,3,2,5,6,Las definidas por la UA
+-,Optativa II,90,3,2,5,6,Las definidas por la UA
+-,Optativa DESIT I,54 a 90,0 a 5,0 a 5,3 a 5,3 a 6,Las definidas por la UA

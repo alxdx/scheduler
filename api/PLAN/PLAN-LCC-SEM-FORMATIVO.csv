@@ -1,0 +1,28 @@
+Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
+CCOS 250,Circuitos lógicos,90,3,2,5,6,CCOS 011
+CCOS 251,Probabilidad y Estádistica,90,3,2,5,6,CCOS 008
+CCOS 252,Sistemas Operativos I,90,3,2,5,6,"CCOS 005 y CCOS 013"
+CCOS 253,Programación Concurrente y Pararlela,90,3,2,5,6,CCOS 013
+CCOS 254,Sistemas Operativos II,90,3,2,5,6,CCOS 252
+CCOS 255,Fundamentos de Lenguajes de Programación,90,5,0,5,6,CCOS 014
+CCOS 256,Programación Distribuida,90,3,2,5,6,CCOS 253
+CCOS 257,Computabilidad,90,5,0,5,6,CCOS 014
+CCOS 258,Inteligencia Artificial,90,3,2,5,6,CCOS 012
+CCOS 259,Arquitectura Funcional de Computadoras,90,3,2,5,6,CCOS 250
+CCOS 260,Redes de Computadoras,90,3,2,5,6,CCOS 251
+CCOS 261,Graficación,90,3,2,5,6,CCOS 006
+CCOS 262,Bases de Datos,90,3,2,5,6,CCOS 010
+CCOS 263,Seguridad en Redes,90,3,2,5,6,CCOS 260
+CCOS 264,Recuperación de la Información,90,3,2,5,6,"CCOS 251 y CCOS 262"
+ISCO 200,Ingenieria de Software,90,3,2,5,6,CCOS 010
+ISCO 201,Análisis y Diseño de Algoritmos,90,5,0,5,6,CCOS 013
+IDDS 001,Administración de Proyectos,72/20,2,2,4,5,Nivel Básico
+IDDS 002,Proyectos I+D I,72/20,2,2,4,5,IDDS 001
+-,Optativa I,90,3,2,5,6,Las definidas por la UA
+-,Optativa II,90,3,2,5,6,Las definidas por la UA
+-,Optativa III,90,3,2,5,6,Las definidas por la UA
+-,Optativa IV,90,3,2,5,6,Las definidas por la UA
+-,Optativa V,90,3,2,5,6,Las definidas por la UA
+-,Optativa DESIT I,54 a 90,0 a 5,0 a 5,3 a 5,3 a 6,Las definidas por la UA
+SSCO 100,Servicio Social,480,-,-,-,10,70% créditos cubiertos
+PPCO 101,Práctica Profesional,250,-,-,-,5,70% créditos cubiertos

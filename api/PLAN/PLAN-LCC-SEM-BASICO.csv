@@ -1,0 +1,21 @@
+Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
+FGUS 001,Formación Humana y Social,72,2,2,4,4,S/R
+FGUS 002,DHPC,72,2,2,4,4,S/R
+CCOS 002,Matemáticas Elementales,90,5,0,5,6,S/R
+CCOS 003,Álgebra Superior,90,5,0,5,6,S/R
+CCOS 007,Cálculo Diferencial,90,5,0,5,6,CCOS 002
+CCOS 006,Álgebra Lineal,90,5,0,5,6,CCOS 003
+CCOS 008,Cálculo Integral,90,5,0,5,6,CCOS 007
+CCOS 001,Metodología de la Programación,72,4,0,4,4,S/R
+CCOS 005,Ensamblador,90,3,2,5,6,CCOS 004
+CCOS 004,Programación I,90,3,2,5,6,CCOS 001
+CCOS 010,Programación II,90,3,2,5,6,CCOS 004
+CCOS 009,Estructuras Discretas,90,5,0,5,6,CCOS 003
+CCOS 011,Circuitos Eléctricos,90,3,2,5,6,CCOS 007
+CCOS 012,Lógica Matemática,90,5,0,5,6,CCOS 009
+CCOS 014,Lenguajes Formales y Autómatas,90,5,0,5,6,CCOS 009
+CCOS 013,Estructuras de Datos,90,3,2,5,6,CCOS 010
+FGUS 004,Lengua Extranjera I,72,2,2,4,4,S/R
+FGUS 005,Lengua Extranjera II,72,2,2,4,4,FGUS 004
+FGUS 006,Lengua Extranjera III,72,2,2,4,4,FGUS 005
+FGUS 007,Lengua Extranjera IV,72,2,2,4,4,FGUS 006

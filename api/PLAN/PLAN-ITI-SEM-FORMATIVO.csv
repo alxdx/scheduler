@@ -1,0 +1,30 @@
+Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
+ISTI 200,Ingeniería de Software II,90,3,2,5,6,ITIS 013
+ISTI 201,Administración de Redes,90,3,2,5,6,ITIS 250
+ISTI 202,Inteligencia de Negocios,90,3,2,5,6,ITIS 258
+ISTI 203,Programación de Dispositivos Móviles,90,1,4,5,6,ITIS 260
+ISTI 204,Trabajo Colaborativo,90,3,2,5,6,ITIS 257
+IDDS 001,Administración de Proyectos,72/20,2,2,4,5,Nivel Básico
+ITIS 250,Redes y Servicios,90,3,2,5,6,CCOS 260
+ITIS 251,Integración de Sistemas y Arquitecturas,90,5,0,5,6,CCOS 260
+ITIS 252,Administración de Bases de Datos,90,3,2,5,6,ITIS 014
+ITIS 253,Fundamentos de la Programación Lógica,72,1,3,4,4,ITIS 008
+ITIS 254,Administración de Sistemas Operativos,180,2,4,6,7,ITIS 010
+ITIS 255,Tecnologías Web,90,1,4,5,6,ITIS 011
+ITIS 256,Cómputo Distribuido,90,2,3,5,6,ITIS 010
+ITIS 257,Modelos de Desarrollo Web,90,3,2,5,6,ITIS 255 y ITIS 256
+ITIS 258,Minería de Datos,90,3,2,5,6,ITIS 252
+ITIS 259,Diseño de la Interacción,90,3,2,5,6,ISTI 200
+ITIS 260,Servicios Web,90,3,2,5,6,ITIS 257
+ITIS 261,Control de Calidad de Software,72/20,3,2,5,6,ISTI 200
+IDDS 002,Proyectos I + DI,72/20,2,2,4,5,IDDS 001
+SSTI 100,Servicio Social,480,-,-,-,10,70% de los Créditos
+PPTI 101,Práctica Profesional,250,-,-,-,5,70% de los Créditos
+-,Optativa I,90,3,2,5,6,Las Definidas por la UA
+-,Optativa II,90,3,2,5,6,Las Definidas por la UA
+-,Optativa III,90,3,2,5,6,Las Definidas por la UA
+-,Optativa IV,90,3,2,5,6,Las Definidas por la UA
+-,Optativa V,90,3,2,5,6,Las Definidas por la UA
+-,Optativa DESIT I,54 a 90,0 a 5,0 a 5,3 a 5,3 a 6,Las Definidas por la UA
+-,Optativa DESIT II,54 a 90,0 a 5,0 a 5,3 a 5,3 a 6,Las Definidas por la UA
+-,Optativa DESIT III,54 a 90,0 a 5,0 a 5,3 a 5,3 a 6,Las Definidas por la UA

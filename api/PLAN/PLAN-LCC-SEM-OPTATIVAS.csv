@@ -1,0 +1,23 @@
+Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
+CCOS 700,Aplicaciones WEB,90,1,4,5,6,S/R
+CCOS 600,Web Semántica,90,3,2,5,6,CCOS 262
+CCOS 610,Aprendizaje Automático y Heurísticas,90,3,2,5,6,CCOS 258
+CCOS 609,Animación por Computadora,90,3,2,5,6,CCOS 261
+CCOS 616,Compiladores,90,3,2,5,6,CCOS 014
+CCOS 604,Criptografía,90,3,2,5,6,CCOS 260
+CCOS 605,Demostración Automática de Teoremas,90,3,2,5,6,CCOS 012
+CCOS 614,Estadística Avanzada,90,3,2,5,6,CCOS 251
+CCOS 606,Métodos Formales,90,3,2,5,6,CCOS 012
+CCOS 613,Programación de Dispositivos Móviles,90,3,2,5,6,CCOS 013
+CCOS 603,Redes Avanzadas,90,3,2,5,6,CCOS 263
+ICCS 257,Minería de Datos,90,3,2,5,6,CCOS 262
+CCOS 601,Ingeniería de Software Avanzada,90,3,2,5,6,ISCO 200
+CCOS 602,Bases de Datos Avanzadas,90,3,2,5,6,CCOS 262
+CCOS 607,Interacción Humano Computadora,90,3,2,5,6,ISCO 200
+CCOS 608,Procesamiento Digital de Imágenes,90,3,2,5,6,CCOS 261
+CCOS 611,Big Data,90,3,2,5,6,CCOS 262
+CCOS 612,Bases de Datos Distribuidas,90,3,2,5,6,CCOS 262
+CCOS 615,Programación de Videojuegos,90,3,2,5,6,CCOS 261
+CCOS 800,Tópicos Selectos de la Computación I,90,3,2,5,6,ISCO 200
+CCOS 801,Tópicos Selectos de la Computación II,90,3,2,5,6,ISCO 200
+CCOS 802,Microprocesadores,90,3,2,5,6,CCOS 250

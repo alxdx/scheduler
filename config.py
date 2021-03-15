@@ -3,7 +3,7 @@ import os
 class Config(object):
     DEBUG = False
     TESTING = False
-    
+    JSON_AS_ASCII= False    
     MONGODATABASE=os.environ.get("MONGODATABASE")
     MONGODB_HOST=MONGODATABASE
     DEVELOPMENT_JWT_KEY=os.environ.get("DEVELOPMENT_JWT_KEY")
