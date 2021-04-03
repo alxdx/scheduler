@@ -9,7 +9,7 @@ from database.models import Alumno
 from resources.routes import initialize_routes
 import os
 
-server=Flask(__name__)
+server=Flask(__name__, static_folder="docs")
 CORS(server)
 enviroment_configuration=os.environ.get('CONFIGURATION_SETUP')
 server.config.from_object(enviroment_configuration)

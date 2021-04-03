@@ -1,0 +1,569 @@
+#%RAML 1.0 
+---
+title: API Scheduler specs
+baseUri: https://hidden-wave-33419.herokuapp.com/api
+version: .01
+
+/auth:
+  displayName: Metodos de autenticación
+  /signup:
+    displayName: Registrar usuario (signup)
+    post:
+      description: Crea un nuevo usuario
+      body:
+        application/json:
+          properties:
+            matricula:
+              type: string
+              required: true
+            name:
+              type: string
+              required: true
+            mail:
+              type: string
+              required: true
+            password:
+              type: string
+              required: true
+          example:
+            {
+              "matricula" : "201750505",
+              "name": "pepe pollo",
+              "mail": "correo@mail.com",
+              "password" : "jijiji"
+            }
+      responses:
+        200:
+          body:
+            application/json:
+        422:
+          body:
+            application/json:
+              example: { "error": "la matricula o el correo ya existen"}
+  /login:
+    displayName: Iniciar sesión
+    post:
+      description: Crea una sesión para el usuario. Retorna un token y otros datos. (ver especificación) 
+      body:
+        application/json:
+          properties:
+            matricula:
+              type: string
+              required: true
+            mail:
+              type: string
+              required: true
+            password:
+              type: string
+              required: true
+          examples:
+            loginConMatricula:
+              {
+            "matricula": "201750505",
+            "mail": "",
+            "password": "jijiji"
+            }
+            loginConCorreo:
+              {
+              "matricula": "",
+              "mail": "correo@mail.com",
+              "password": "jijiji"
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              properties:
+                token:
+                  description: el token que valida la sesion del usuario
+                  type: string
+                  required: true
+                matricula:
+                  description: matricula del usuario
+                  type: string
+                  required: true
+                carrera:
+                  description: | 
+                    el acrónimo de la carrera del usuario.
+                    (para usuarios nuevos es null)
+                  type: string
+                  required: true
+                ultima_actualizacion:
+                  description: |
+                    La fecha mas reciente en que se actualizó el plan del usuario
+                    (para usuarios nuevos es null)
+                  type: string
+                  required: true
+              examples:
+                usuarioNuevo: 
+                  { 
+                  "token": "babaababab123123",
+                  "matricula":"201750505",
+                  "carrera":"null",
+                  "ultima_actualizacion": "null"
+                  }
+                usuarioConPlanActualizado:
+                  { 
+                  "token": "babaababab123123",
+                  "matricula":"201750505",
+                  "carrera":"ITI",
+                  "ultima_actualizacion":"03-06-2019"
+                  }
+        422:
+          body:
+            application/json:
+              example: { "error": "datos de usuario no encontrado"}
+        401:
+          body:
+            application/json:
+              example: { "error": "usuario o password invalidos"}
+  /logout:
+    description: para cerrar sesion pero aun no lo implemento.
+/plan:
+  displayName: Plan de carrera
+  description: Recupera todo o parte del plan de una carrera.
+  get:
+    queryParameters:
+      carrera:
+        displayName: Carrera
+        type: string
+        description: |
+          Acrónimo de la carrera
+          Posibles valores (ICC, LCC,ITI)
+        example: https://hidden-wave-33419.herokuapp.com/api/plan?carrera=ITI
+        required: true
+      nivel:
+        displayName: Nivel del plan
+        type: string
+        description: |
+          Tipo del plan. Si se omite se retorna todo.
+          Valores permitidos (formativo,basico,optativas)
+        example: https://hidden-wave-33419.herokuapp.com/api/plan?carrera=ITI&&nivel=formativo
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+              "carrera":"ICC",
+              "materias": [
+                {
+                  "asignatura":"DHPC",
+                  "mat_id":"FGUS 002"
+                },
+                {
+                  "asignatura":"Matemáticas",
+                  "mat_id":"ICCS 001"
+                }
+                ]
+              }
+      400:
+        body:
+          application/json:
+            example: {"error":"parametros de query no reconocidos"}
+  /{matricula}:
+    displayName: plan del alumno 
+    description: |
+      Materias ya cursadas por el usuario.
+    uriParameters:
+      matricula:
+        description: matricula del usuario
+        example: /plan/201750505
+    get:
+      description: recupera todas las materias del plan académico.
+      headers:
+        access_token:
+          required: true
+          description: |
+            el token devuelto al iniciar sesion (Authorization bearer)
+      responses:
+        200:
+          body:
+            application/json:
+              properties:
+                matricula:
+                  description: |
+                    la matricula del alumno a la que corresponde el plan
+                  type: string
+                  required: true
+                carrera:
+                  description: |
+                    la carrera del alumno a la que corresponde el plan
+                  type: string
+                  required: true
+                materias:
+                  description: |
+                    la lista de materias del plan de la carrera. Cada una con la bandera "aprovada" y los valores "si"/"no" dependiendo del avance del alumno.
+                  type: object[]
+                  required: true
+              example: |
+                {
+                "matricula": "20750505",
+                "carrera": "ITI",
+                "materias": [
+                  {
+                    "mat_id": "ICCS 001",
+                    "asignatura": "Matemáticas",
+                    "aprovada":"no"
+                  },
+                  {
+                    "mat_id": "ICCS 001",
+                    "asignatura": "Matemáticas",
+                    "aprovada":"si"
+                  }
+                  ]
+                }
+        400:
+          body:
+            application/json:
+              example: {"error":"parametros de query no reconocidos"}
+    patch:
+      displayName: actualizar plan de alumno.
+      description: actualiza el avance en el plan del alumno
+      headers:
+        access_token:
+          required: true
+          description: |
+            el token devuelto al iniciar sesion (Authorization bearer)
+      body:
+        application/json:
+          properties:
+            matricula:
+              description: la matricula del alumno
+              type: string
+              required: true
+            carrera:
+              description: la carrera a la que pertenece el alumno
+              type: string
+              required: true
+            materias_nuevas:
+              description: la lista de las materias que se actualizarán como ya aprobadas por el alumno
+              type: object[]
+              required: true
+          example:
+              {    
+                "matricula": "201750505",
+                "carrera": ITI,
+                "materias_nuevas": [
+                  {"mat_id": "ICCS 001"},
+                  {"mat_id": "ICCS 001",}
+                ]
+              }
+      responses:
+        200:
+/programa-disponible:
+  displayName: Plan semestral (materias ofertadas)
+  description: Programa ofrecido el semestre actual
+  get:
+    description: |
+      Recupera datos de las materias ofertadas en el semestre.
+      ES decir las materias con las que se puede hacer el horario.
+    headers:
+        access_token:
+          required: true
+          description: |
+            el token devuelto al iniciar sesion (Authorization bearer)
+    queryParameters:
+      carrera:
+        displayName: Carrera
+        type: string
+        description: |
+          Acrónimo de la carrera
+          Posibles valores (ICC, LCC,ITI)
+          Pasar solo este parametro retornará solo los nombres de las materias
+        example: https://hidden-wave-33419.herokuapp.com/api/programa-disponible?carrera=ITI
+        required: true
+      nivel:
+        displayName: Nivel del plan
+        type: string
+        description: |
+          Tipo del plan. Si se omite se retornan todos los niveles.
+          Valores permitidos (formativo,basico,optativas)
+        example: https://hidden-wave-33419.herokuapp.com/api/programa-disponible?=ITI&&nivel=formativo
+        required: false
+      nrc:
+        type: boolean
+        displayName: NRC clave de la materia
+        description: Pasar como true si se requieren los NRC de cada materia.
+        required: false
+      mat_id: 
+        type: boolean
+        displayName: Identificador de la materia
+        description: Pasar como true si se requiere el identificador de cada materia.
+        required: false
+      profesor:
+        type: boolean
+        displayName: NRC clave de la materia
+        description: Pasar como true si se requieren el profesor que imparte de cada materia.
+        required: false
+      horarios:
+        type: boolean
+        displayName: Horario en que se imparte la materia
+        description: Pasar como true si se requieren looos horarios de cada materia.
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            properties:
+              carrera:
+                type: string
+                required: true
+                description: |
+                  nombre de la carrera a la que pertenecen las materias 
+              nivel:
+                type: string
+                required: true
+                description: |
+                  nivel al que pertenecen laaaas materias.
+                  Valores posibles (todos,basico,formativo,optativas)
+              materias:
+                type: object[]
+                required: true
+                description: |
+                  lista de materias disponibles con las propiedades 
+                  especificadas en la query
+            examples:
+              default:
+                {
+                  "carrera":"ICC",
+                  "nivel": "todos",
+                  "materias": [
+                {
+                  "asignatura":"DHPC"
+                },
+                {
+                  "asignatura":"Matemáticas"
+                }
+                ]
+              }
+              "?nivel=formativo&&mat_id=true":
+                {
+                  "carrera":"ICC",
+                  "nivel": "formativo",
+                  "materias": [
+                {
+                  "asignatura":"DHPC",
+                  "mat_id":"FGUS 002"
+                },
+                {
+                  "asignatura":"Matemáticas",
+                  "mat_id":"ICCS 001"
+                }
+                ]
+              }
+      400:
+        body:
+          application/json:
+            example: {"error":"parametros de query no reconocidos"}
+/horario:
+  displayName: Obtener Horario
+  description: endpoint principal que retorna el horario recomendado segun las especificaciones del usuario.
+  post:
+    description: |
+      Retorna el horario recomendado dadas las especificaciones del usuario
+    headers:
+      access_token:
+          required: true
+          description: |
+            el token devuelto al iniciar sesion (Authorization bearer)
+    body:
+      aplication/json:
+        properties:
+          matricula:
+            type: string
+            description: matricula del usuario
+            required: true
+          hra_inicio:
+            type: string
+            description: cadena con formato de 24 horas. "HH:00"
+            example: "08:00"
+            required: true
+          hra_final:
+            type: string
+            description: cadena con formato de 24 horas. "HH:00"
+            example: "17:00"
+            required: true
+          materias_obligadas:
+            type: object[]
+            description: |
+              lista de materias que son forzosamente requeridos 
+              por el usuario para armar el horario.
+              Puede contener una lista vacia
+              Cada materia es un objeto compuesto del mat_id y el nrc con valor opcional NA en caso de que no sea requerido.
+            example: [ 
+                { "mat_id": "ICCS 001", "NRC": "971564" },
+                { "mat_id": "ICCS 006", "NRC": "NA" }
+              ]
+            required: true
+        examples:
+          sinMateriasRequeridas:
+            {
+              "matricula": "201750505",
+              "hra_inicio": "08:00",
+              "hra_final": "15:00",
+              "materias_obligadas": []
+            }
+          conMateriasRequeridas:
+            {
+              "matricula": "201750505",
+              "hra_inicio": "08:00",
+              "hra_final": "15:00",
+              "materias_obligadas": [
+                { "mat_id": "ICCS 001", "NRC": "971564" },
+                { "mat_id": "ICCS 006", "NRC": "NA" }
+              ]
+            }
+    responses:
+      200:
+        body:
+          application/json:
+            description: |
+              UN JSON con los dias de la semana como llaves. Cada uno con una 
+              lista de materias seleccionadas por dia.
+              la lista esta ordenada por hora en orden ascendente.
+              Puede ser vacia.
+            properties:
+              lunes:
+                description: |
+                  lista de materias seleccionadas para el día lunes.
+                  la lista esta ordenada por hora en orden ascendente.
+                required: true
+                type: object[]
+              martes:
+                description: misma que lunes
+                required: true
+                type: object[]
+              miercoles:
+                description: misma que los demas dias 
+                required: true
+                type: object[]
+              jueves: 
+                required: true
+                type: object[]
+              viernes: 
+                required: true
+                type: object[]
+              materia: 
+                description: Es el elemento de la lista de días
+                type: object
+                required: false
+                example: {
+                  "mat_id": "ICC 001",
+                  "materias": "Matemáticas Discretas",
+                  "NRC": "223514",
+                  "profesor": "Guillermo Escalante Ravidia",
+                  "Hora": ["13:00","14:00"],
+                  "Lugar": "CCO4 104" 
+                 }
+            examples:
+              alumnoConMartesyJuevesLibre: |
+                {
+                  "lunes": [
+                    {
+                    "mat_id": "ICC 001",
+                    "materias": "Matemáticas Discretas",
+                    "NRC": "223514",
+                    "profesor": "Guillermo Escalante Ravidia",
+                    "hora": ["13:00","14:00"],
+                    "lugar": "CCO4 104" 
+                   }  
+                  ],
+                  "martes": [],
+                  "miercoles": [
+                    {
+                    "mat_id": "ICC 001",
+                    "materias": "Matemáticas Discretas",
+                    "NRC": "223514",
+                    "profesor": "Guillermo Escalante Ravidia",
+                    "Hora": ["13:00","14:00"],
+                    "Lugar": "CCO4 104" 
+                    },
+                    {
+                    "mat_id": "ICC 002",
+                    "materias": "DHPC",
+                    "NRC": "223556",
+                    "profesor": "Franco Escamilla",
+                    "hora": ["15:00","16:00"],
+                    "lugar": "CCO4 202" 
+                    }
+                  ],
+                  "jueves": [],
+                  "viernes": [
+                    {
+                    "mat_id": "ICC 001",
+                    "materias": "Matemáticas Discretas",
+                    "NRC": "223514",
+                    "profesor": "Guillermo Escalante Ravidia",
+                    "Hora": ["13:00","14:00"],
+                    "Lugar": "CCO4 104" 
+                    },
+                    {
+                    "mat_id": "ICC 002",
+                    "materias": "DHPC",
+                    "NRC": "223556",
+                    "profesor": "Franco Escamilla",
+                    "hora": ["15:00","16:00"],
+                    "lugar": "CCO4 104" 
+                    }
+                  ]
+                }
+  /{matricula}:
+    description: para operar sobre el horario del alumno
+    uriParameters:
+      matricula:
+        description: matricula del usuario
+        example: /plan/201750505 
+    post:
+      description: |
+        guarda el horario que el alumno haya seleccionado.
+        Se manda el mismo formato que devueleve el endpoint /horario
+      headers:
+        access_token:
+          required: true
+          description: |
+            el token devuelto al iniciar sesion (Authorization bearer)
+      body:
+          application/json:
+            description: |
+              UN JSON con los dias de la semana como llaves. Cada uno con una 
+              lista de materias seleccionadas por dia.
+              Puede ser vacia.
+            properties:
+              lunes:
+                description: |
+                  lista de materias seleccionadas para el día lunes.
+                  la lista esta ordenada por hora en orden ascendente.
+                required: true
+                type: object[]
+              martes:
+                description: misma que lunes
+                required: true
+                type: object[]
+              miercoles:
+                description: misma que los demas dias 
+                required: true
+                type: object[]
+              jueves: 
+                required: true
+                type: object[]
+              viernes: 
+                required: true
+                type: object[]
+              materia: 
+                description: Es el elemento de la lista de días
+                type: object
+                required: false
+                example: {
+                  "mat_id": "ICC 001",
+                  "materias": "Matemáticas Discretas",
+                  "NRC": "223514",
+                  "profesor": "Guillermo Escalante Ravidia",
+                  "Hora": ["13:00","14:00"],
+                  "Lugar": "CCO4 104" 
+                 }
+    get:
+      description: |
+        Devuelve el horario que el alumno registró. El objeto que 
+        retorna es el mismo que retorna el enpoint /horario
