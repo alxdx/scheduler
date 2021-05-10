@@ -14,6 +14,7 @@ CORS(server)
 enviroment_configuration=os.environ.get('CONFIGURATION_SETUP')
 server.config.from_object(enviroment_configuration)
 #print(server.config["JSON_AS_ASCII"])
+print(enviroment_configuration)
 
 
 api=Api(server)
@@ -23,8 +24,8 @@ jwt=JWTManager(server)
 initialize_db(server)
 initialize_routes(api)
 
-if __name__=="__main__":
-    app.run(host='0.0.0.0',port=5000)
+#if __name__=="__main__":
+ #   app.run(host='0.0.0.0',port=5000)
 #{
   #"matricula":"201756568",
   #"mail":"mycorreo2@mail.com",

@@ -19,7 +19,8 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
-
+    DEGUB = True
+    MONGODB_HOST = "mongodb://localhost/scheduler"
 
 
 

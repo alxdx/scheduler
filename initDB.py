@@ -10,7 +10,7 @@ configuration=os.environ.get('CONFIGURATION_INIT_DB')
 routine.config.from_object(configuration)
 db=MongoEngine()
 db.init_app(routine)
-
+print("connected to "+ configuration)
 csvs=getDocsinDir("api/PLAN/")
 docs=getCSVs(csvs)
 #print(csvs)

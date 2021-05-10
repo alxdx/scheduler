@@ -5,7 +5,7 @@ class Alumno(db.Document):
     name= db.StringField(required=True)
     mail=db.EmailField(required=True,unique=True)
     password=db.StringField(required=True)
-
+    carrera=db.StringField(required=True)
     def hash_password(self):
          self.password=generate_password_hash(self.password).decode('utf8')
     def check_password(self,password):
