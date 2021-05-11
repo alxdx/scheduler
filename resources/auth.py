@@ -13,7 +13,6 @@ class SignupApi(Resource):
         body=request.get_json()
         user=Alumno(**body)
         user.hash_password()
-        user["carrera"]="null"
         try:
             user.save()
         except NotUniqueError as e:
