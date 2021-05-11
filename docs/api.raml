@@ -1,6 +1,6 @@
 #%RAML 1.0 
 ---
-title: API Scheduler specs
+title: API SCHEDULER
 baseUri: https://hidden-wave-33419.herokuapp.com/api
 version: .01
 
@@ -82,17 +82,13 @@ version: .01
                   description: matricula del usuario
                   type: string
                   required: true
-                name:
-                  description: nombre del usuario
-                  type: string
-                  required: true
                 carrera:
                   description: | 
                     el acrónimo de la carrera del usuario.
                     (para usuarios nuevos es null)
                   type: string
                   required: true
-                ultima_actualizacion:
+                last_updated:
                   description: |
                     La fecha mas reciente en que se actualizó el plan del usuario
                     (para usuarios nuevos es null)
@@ -103,17 +99,15 @@ version: .01
                   { 
                   "token": "babaababab123123",
                   "matricula":"201750505",
-                  "name":"ejemplo de nombre jiji",
                   "carrera":"null",
-                  "ultima_actualizacion": "null"
+                  "last_updated": "null"
                   }
                 usuarioConPlanActualizado:
                   { 
                   "token": "babaababab123123",
                   "matricula":"201750505",
-                  "name":"ejemplo de nombre jijiji",
                   "carrera":"ITI",
-                  "ultima_actualizacion":"03-06-2019"
+                  "last_updated":"03-06-2019"
                   }
         422:
           body:
@@ -200,8 +194,13 @@ version: .01
                   required: true
                 materias:
                   description: |
-                    la lista de materias del plan de la carrera. Cada una con la bandera "aprovada" y los valores "si"/"no" dependiendo del avance del alumno.
+                    la lista de materias del plan de la carrera. Cada una con la bandera "aprovada" y los valores true/false dependiendo del avance del alumno.
                   type: object[]
+                  required: true
+                last_updated:
+                  description: |
+                    last_updated vez que se actualizó el plan de materias del alumno DD-MM-YYYY
+                  type: string
                   required: true
               example: |
                 {
@@ -211,19 +210,24 @@ version: .01
                   {
                     "mat_id": "ICCS 001",
                     "asignatura": "Matemáticas",
-                    "aprovada":"no"
+                    "aprovada":false
                   },
                   {
                     "mat_id": "ICCS 001",
                     "asignatura": "Matemáticas",
-                    "aprovada":"si"
+                    "aprovada":true
                   }
-                  ]
+                  ],
+                "last_updated": "06-04-2021"
                 }
         400:
           body:
             application/json:
               example: {"error":"parametros de query no reconocidos"}
+        401:
+          body:
+            application/json:
+              example: {"error":"la matricula no corresponde con el usuario logueado"}
     patch:
       displayName: actualizar plan de alumno.
       description: actualiza el avance en el plan del alumno
@@ -244,17 +248,14 @@ version: .01
               type: string
               required: true
             materias_nuevas:
-              description: la lista de las materias que se actualizarán como ya aprobadas por el alumno
-              type: object[]
+              description: la lista de las materias (mat_id) que se actualizarán como ya aprobadas por el alumno
+              type: string[]
               required: true
           example:
               {    
                 "matricula": "201750505",
                 "carrera": ITI,
-                "materias_nuevas": [
-                  {"mat_id": "ICCS 001"},
-                  {"mat_id": "ICCS 001",}
-                ]
+                "materias_nuevas": ["ICCS 001","ICCS 001"]
               }
       responses:
         200:

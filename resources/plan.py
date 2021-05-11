@@ -3,10 +3,11 @@ from flask_restful import Resource, request
 from database.models import Plan,Materia
 import re
 from bson import regex
+
 #clase que retorna todo el programa academico de una carrera
 #parametros que puede recibir son ITI || LCC || ICC
-class Plan_r(Resource):
-
+class Plan_res(Resource):
+    
     def valid_param(self,carrera=None,nivel=None) -> bool:
         values_carrera = ["LCC","ICC","ITI"]
         values_nivel =   ["formativo","basico","optativas"]
