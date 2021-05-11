@@ -39,12 +39,16 @@ class LoginApi(Resource):
                 return {"error":"usuario o password invalidos"},401
             expires=datetime.timedelta(days=2)
             access_token=create_access_token(identity=str(user.id),expires_delta=expires)
+            if user.last_updated != "null":
+                l_u =  user.last_updated.strftime('%d-%m-%Y')
+            else:
+                l_u = None
             payload= {
                     "token":access_token,
                     "matricula": user.matricula,
                     "name":user.name,
                     "carrera":user.carrera,
-                    "last_updated": user.last_updated.strftime('%d-%m-%Y')
+                    "last_updated": l_u
                     }
             return payload,200
 
