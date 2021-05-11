@@ -40,7 +40,7 @@ class PlanDeAlumno(Resource):
         alumno = Alumno.objects.get(id=alumno_id)
         if alumno.matricula != matricula:
             return {"msg":"la matricula no corresponde con el usuario logueado"}, 401
-        if alumno.carrera == "null":
+        if alumno.carrera == None:
             return {"msg":"aun no has registrado una carrera"},400
         materias_cursadas = self.get_materias_cursadas(alumno.carrera,alumno.materias_cursadas)
         payload = {"matricula": alumno.matricula,
@@ -61,7 +61,7 @@ class PlanDeAlumno(Resource):
         if body["carrera"] not in values_carrera:
             #esto hay que agregarlo a la docu
             return {"msg":"parametros de query no reconocidos:(carrera)"},400
-        if alumno.carrera == "null":
+        if alumno.carrera == None:
             alumno.update(carrera=body["carrera"],last_updated=datetime.date.today())
             alumno.reload()
 
