@@ -8,6 +8,7 @@ import re
 from bson import regex
 import datetime 
 class PlanDeAlumno(Resource):
+
     def get_materias_cursadas(self,carrera,materias_aprobadas):
         reg = regex.Regex.from_native(re.compile(carrera,re.IGNORECASE))
         pipeline = [
@@ -21,7 +22,6 @@ class PlanDeAlumno(Resource):
                 },
                 {"$project":{
                     "_id":0,
-                    "carrera":carrera.upper(),
                     "materias":{
                         "$reduce":{
                             "input":"$materias",
@@ -33,7 +33,17 @@ class PlanDeAlumno(Resource):
                     }
                 }}]
         ans = list(Plan.objects().aggregate(pipeline))
-        return ans
+        ans = ans[0]["materias"]
+        for i,elem in enumerate(ans):
+            ans[i]["aprobada"]=False
+            for j,apr in enumerate(materias_aprobadas):
+                if elem["mat_id"] == apr.mat_id:
+                    materias_aprobadas[j]=materias_aprobadas[-1]
+                    materias_aprobadas.pop()
+                    ans[i]["aprobada"]=True
+                    break
+        return ans 
+
     @jwt_required()
     def get(self,matricula):
         alumno_id = get_jwt_identity()
@@ -67,7 +77,7 @@ class PlanDeAlumno(Resource):
 
         if alumno.carrera != body["carrera"]:
             return {"msg":"la carrera no corresponde con el usuario logueado"},401
-        
+       #TODO here we need a func to check que las materias nuevas son parte de la carrera a la que pertence el usuario 
         alumno.update(add_to_set__materias_cursadas = body["materias_nuevas"],last_updated=datetime.date.today())
         return 200
 
