@@ -43,6 +43,14 @@ class PlanDeAlumno(Resource):
                     ans[i]["aprobada"]=True
                     break
         return ans 
+    
+    def validate_materia(self,materia,carrera):
+        reg = regex.Regex.from_native(re.compile(carrera,re.IGNORECASE))
+        pipeline = [{"$match":{"materias.mat_id":materia,"carrera":{"$regex":reg}}},
+                {"$project":{"materias":0,"_id":0}}
+                ]
+        ans = list(Plan.objects().aggregate(pipeline))
+        return True if len(ans) > 0 else False
 
     @jwt_required()
     def get(self,matricula):
@@ -59,8 +67,8 @@ class PlanDeAlumno(Resource):
                 "last_updated": alumno.last_updated.strftime('%d-%m-%Y')
                 }
         return payload,200
+
     @jwt_required()
-    #AQUI FALTA VALIDAR QUE LA CARRERA QUE SE QUIERA AGREGAR PERTENEZCA AL PLAN DE ESTUDIOS
     def patch(self,matricula):
         values_carrera = ["LCC","ICC","ITI"]
         alumno_id = get_jwt_identity()
@@ -77,7 +85,20 @@ class PlanDeAlumno(Resource):
 
         if alumno.carrera != body["carrera"]:
             return {"msg":"la carrera no corresponde con el usuario logueado"},401
-       #TODO here we need a func to check que las materias nuevas son parte de la carrera a la que pertence el usuario 
-        alumno.update(add_to_set__materias_cursadas = body["materias_nuevas"],last_updated=datetime.date.today())
-        return 200
+        wrong_materias = []
+        good_materias=[]
+        for elem in body["materias_nuevas"]:
+            if self.validate_materia(elem,alumno.carrera):
+                good_materias.append(elem)
+            else:
+                wrong_materias.append(elem)
 
+        alumno.update(add_to_set__materias_cursadas = good_materias,last_updated=datetime.date.today())
+        if len(wrong_materias) == 0:
+            return 200
+        #TODO: actualizar documentacion
+        else:
+            return {
+                    "msg": "materias parcialmente agregadas, algunas materias no corresponden con el plan del alumno",
+                    "materias_fallidas":wrong_materias
+                    },400
