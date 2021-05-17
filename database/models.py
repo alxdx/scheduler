@@ -6,7 +6,7 @@ class Alumno(db.Document):
     name= db.StringField(required=True)
     mail=db.EmailField(required=True,unique=True)
     password=db.StringField(required=True)
-    carrera=db.StringField(default=None)
+    carrera=db.StringField(required=True)
     horario=db.ReferenceField('HorarioAlumno')
     materias_cursadas=db.ListField(db.ReferenceField('Materia'), default=[])
     last_updated=db.DateTimeField(default=None)
