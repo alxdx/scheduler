@@ -96,7 +96,6 @@ class PlanDeAlumno(Resource):
         alumno.update(add_to_set__materias_cursadas = good_materias,last_updated=datetime.date.today())
         if len(wrong_materias) == 0:
             return 200
-        #TODO: actualizar documentacion
         else:
             return {
                     "msg": "materias parcialmente agregadas, algunas materias no corresponden con el plan del alumno",

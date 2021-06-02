@@ -36,21 +36,27 @@ class Materia(db.Document):
     requeridas=db.ListField(db.StringField())
 
 class Profesor(db.DynamicDocument):
-    nombre=db.StringField(required=True)
+    nombre=db.StringField(required=True,unique = True)
     #cubiculo= "CCO2 102"
 
-class LugarYHora(db.DynamicEmbeddedDocument):
-    #martes=["13:00","CCO4 301"]
-    pass
+class LugarYHora(db.EmbeddedDocument):
+    dia = db.StringField(required=True)
+    hora_inicio = db.IntField(required = True)
+    hora_final = db.IntField(required = True)    
+    salon = db.StringField(required = True)
 
 class OpcionMateria(db.Document):
+    clave = db.StringField(required=True)
     nrc=db.StringField(required=True,primary_key=True)
     asignatura=db.StringField(required=True)
-    lugar_y_hora=db.DynamicField(LugarYHora ,required=True)
+    lugar_y_hora=db.EmbeddedDocumentListField(LugarYHora,required=True)
     profesor=db.ReferenceField('Profesor')
+
+class ProgramaDisponible(db.Document):
+    carrera = db.StringField(required=True,unique=True)
+    materias = db.ListField(db.ReferenceField('OpcionMateria'),required=True)
 
 class HorarioAlumno(db.Document):
     created_by= db.ReferenceField('Alumno',reverse_delete_rule=db.DENY)
     materias = db.ListField(db.ReferenceField('OpcionMateria'),required=True)
-
 Alumno.register_delete_rule(HorarioAlumno,'horario',db.CASCADE)

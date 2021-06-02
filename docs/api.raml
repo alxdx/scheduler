@@ -22,6 +22,9 @@ version: .01
             mail:
               type: string
               required: true
+            carrera:
+              type: string
+              required: true
             password:
               type: string
               required: true
@@ -30,6 +33,7 @@ version: .01
               "matricula" : "201750505",
               "name": "pepe pollo",
               "mail": "correo@mail.com",
+              "carrera": "ITI",
               "password" : "jijiji"
             }
       responses:
@@ -259,6 +263,23 @@ version: .01
               }
       responses:
         200:
+        400:
+          body:
+            application/json:
+              properties:
+                msg:
+                  description: mensaje del servidor
+                materias_fallidas:
+                  type: string[]
+                  description: informacion de materias que no se actualizaron   
+              example: {"msg": "materias parcialmente agregadas, algunas materias no corresponden con el plan del alumno",
+                    "materias_fallidas": ["CCOS98"]
+                    }
+        401: 
+          body:
+            application/json:
+              example: {"error":"la matricula no corresponde con el usuario logueado"}
+
 /programa-disponible:
   displayName: Plan semestral (materias ofertadas)
   description: Programa ofrecido el semestre actual
@@ -289,11 +310,6 @@ version: .01
           Valores permitidos (formativo,basico,optativas)
         example: https://hidden-wave-33419.herokuapp.com/api/programa-disponible?=ITI&&nivel=formativo
         required: false
-      nrc:
-        type: boolean
-        displayName: NRC clave de la materia
-        description: Pasar como true si se requieren los NRC de cada materia.
-        required: false
       mat_id: 
         type: boolean
         displayName: Identificador de la materia
@@ -307,7 +323,7 @@ version: .01
       horarios:
         type: boolean
         displayName: Horario en que se imparte la materia
-        description: Pasar como true si se requieren looos horarios de cada materia.
+        description: Pasar como true si se requieren los horarios de cada materia.
         required: false
     responses:
       200:
