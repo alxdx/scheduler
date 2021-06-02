@@ -34,6 +34,7 @@ class PlanDeAlumno(Resource):
                 }}]
         ans = list(Plan.objects().aggregate(pipeline))
         ans = ans[0]["materias"]
+        print(ans)
         for i,elem in enumerate(ans):
             ans[i]["aprobada"]=False
             for j,apr in enumerate(materias_aprobadas):

@@ -46,7 +46,7 @@ class LugarYHora(db.EmbeddedDocument):
     salon = db.StringField(required = True)
 
 class OpcionMateria(db.Document):
-    clave = db.StringField(required=True)
+    mat_id = db.StringField(required=True)
     nrc=db.StringField(required=True,primary_key=True)
     asignatura=db.StringField(required=True)
     lugar_y_hora=db.EmbeddedDocumentListField(LugarYHora,required=True)

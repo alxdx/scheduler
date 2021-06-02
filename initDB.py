@@ -5,9 +5,9 @@ from database.models import Materia,SimpleMateria,Plan
 
 from mongoengine import connect,get_db
 
-#configuration=os.environ.get('CONFIGURATION_INIT_DB')
-host = 'mongodb://localhost/scheduler'
-db = connect(host = host)
+production = os.environ.get('MONGODATABASE')
+local = 'mongodb://localhost/scheduler'
+db = connect(host = production)
 
 #print("connected to "+ configuration)
 csvs = getDocsinDir("api/PLAN/")

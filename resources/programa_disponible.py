@@ -93,7 +93,7 @@ class Programa(Resource):
                         "asignatura": True
                         }
             if mat_id:
-                chooser["clave"] = True
+                chooser["mat_id"] = True
             if profesor:
                 chooser["profesor"] = True
             if horarios:

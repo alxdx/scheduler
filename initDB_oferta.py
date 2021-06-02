@@ -8,9 +8,9 @@ day = { "L":"Lunes",
         "J":"Jueves",
         "V":"Viernes"}
 
-#configuration=os.environ.get('CONFIGURATION_INIT_DB')
-host = 'mongodb://localhost/scheduler'
-db = connect(host = host)
+production = os.environ.get('MONGODATABASE')
+local = 'mongodb://localhost/scheduler'
+db = connect(host = production)
 
 #print("connected to "+ configuration)
 csvs = getDocsinDir("api/HORARIO/")
@@ -42,7 +42,7 @@ for dc, name in zip(docs,csvs):
 
                     OpcionMateria( 
                             nrc = obj["NRC"],
-                            clave = obj["CLAVE"],
+                            mat_id = obj["CLAVE"],
                             asignatura = obj["MATERIA"],
                             lugar_y_hora = lyh,
                             profesor = prof
