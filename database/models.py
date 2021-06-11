@@ -34,6 +34,7 @@ class Materia(db.Document):
     hrs_total_sem=db.IntField(required=True)
     creditos=db.IntField(required=True)
     requeridas=db.ListField(db.StringField())
+    por_desbloquear=db.ListField(db.StringField())
 
 class Profesor(db.DynamicDocument):
     nombre=db.StringField(required=True,unique = True)

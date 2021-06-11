@@ -10,7 +10,7 @@ day = { "L":"Lunes",
 
 production = os.environ.get('MONGODATABASE')
 local = 'mongodb://localhost/scheduler'
-db = connect(host = production)
+db = connect(host = local)
 
 #print("connected to "+ configuration)
 csvs = getDocsinDir("api/HORARIO/")
@@ -65,7 +65,8 @@ for dc, name in zip(docs,csvs):
                     lyh = om.lugar_y_hora
                     for d in obj["DIA"]:
                         l = LugarYHora(dia = day[d], hora_inicio = int(hrinicio), hora_final = int(hrfinal), salon = obj["SALON"])
-                        lyh.append(l)
+                        if l not in lyh:
+                            lyh.append(l)
 
                     om.update(lugar_y_hora = lyh)
 

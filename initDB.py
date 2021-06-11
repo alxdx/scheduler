@@ -7,7 +7,7 @@ from mongoengine import connect,get_db
 
 production = os.environ.get('MONGODATABASE')
 local = 'mongodb://localhost/scheduler'
-db = connect(host = production)
+db = connect(host = local)
 
 #print("connected to "+ configuration)
 csvs = getDocsinDir("api/PLAN/")
@@ -29,7 +29,7 @@ for dc,name in zip(docs,csvs):
                     asignatura=obj["Asignatura"],hrs_periodo = obj["HT/HP por Periodo"],
                     hrs_teoria_sem = obj["HT por semana"],hrs_pract_sem = obj["HP por semana"],
                     hrs_total_sem = obj["HT/HP por semana"],creditos=obj["Creditos"],
-                    requeridas = obj["Requisitos"].split(" y "))
+                    requeridas = list(map(lambda x : x.replace(' ',''),obj["Requisitos"].split(" y "))))
             #print("checking {}".format(obj["Código"]))
             if not Materia.objects(mat_id = obj["Código"]):
                 mat.save()

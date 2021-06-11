@@ -1,9 +1,9 @@
 Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
-ISTI 200,Ingeniería de Software II,90,3,2,5,6,ITIS 013
-ISTI 201,Administración de Redes,90,3,2,5,6,ITIS 250
-ISTI 202,Inteligencia de Negocios,90,3,2,5,6,ITIS 258
-ISTI 203,Programación de Dispositivos Móviles,90,1,4,5,6,ITIS 260
-ISTI 204,Trabajo Colaborativo,90,3,2,5,6,ITIS 257
+ITIS 200,Ingeniería de Software II,90,3,2,5,6,ITIS 013
+ITIS 201,Administración de Redes,90,3,2,5,6,ITIS 250
+ITIS 202,Inteligencia de Negocios,90,3,2,5,6,ITIS 258
+ITIS 203,Programación de Dispositivos Móviles,90,1,4,5,6,ITIS 260
+ITIS 204,Trabajo Colaborativo,90,3,2,5,6,ITIS 257
 IDDS 001,Administración de Proyectos,72/20,2,2,4,5,Nivel Básico
 ITIS 250,Redes y Servicios,90,3,2,5,6,CCOS 260
 ITIS 251,Integración de Sistemas y Arquitecturas,90,5,0,5,6,CCOS 260
@@ -14,9 +14,9 @@ ITIS 255,Tecnologías Web,90,1,4,5,6,ITIS 011
 ITIS 256,Cómputo Distribuido,90,2,3,5,6,ITIS 010
 ITIS 257,Modelos de Desarrollo Web,90,3,2,5,6,ITIS 255 y ITIS 256
 ITIS 258,Minería de Datos,90,3,2,5,6,ITIS 252
-ITIS 259,Diseño de la Interacción,90,3,2,5,6,ISTI 200
+ITIS 259,Diseño de la Interacción,90,3,2,5,6,ITIS 200
 ITIS 260,Servicios Web,90,3,2,5,6,ITIS 257
-ITIS 261,Control de Calidad de Software,72/20,3,2,5,6,ISTI 200
+ITIS 261,Control de Calidad de Software,72/20,3,2,5,6,ITIS 200
 IDDS 002,Proyectos I + DI,72/20,2,2,4,5,IDDS 001
 SSTI 100,Servicio Social,480,-,-,-,10,70% de los Créditos
 PPTI 101,Práctica Profesional,250,-,-,-,5,70% de los Créditos

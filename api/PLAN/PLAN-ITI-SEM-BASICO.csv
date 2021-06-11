@@ -1,22 +1,22 @@
-,,,,,Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
-,,,,,FGUS 001,Formación Humana y Social,72,2,2,4,4,S/R
-,,,,,FGUS 002,DHPC,72,2,2,4,4,S/R
-,,,,,ITIS 001,Introducción a las Matemáticas,90,0,5,5,6,S/R
-,,,,,ITIS 002,Introducción a la Programación,90,3,2,5,6,S/R
-,,,,,ITIS 003,Teoría General de Sistemas y Sistemas de la Información,72,0,4,4,4,S/R
-,,,,,ITIS 004,Cálculo Diferencial e Integral,90,3,2,5,6,ITIS 001
-,,,,,ITIS 005,Algebra Lineal con Aplicaciones,90,3,2,5,6,ITIS 001
-,,,,,ITIS 008,Matemáticas Discretas,90,1,4,5,6,ITIS 005
-,,,,,ITIS 009,Probabilidad y Estadística,90,1,4,5,6,ITIS 004
-,,,,,ITIS 006,Programación Orientada a Objetos I,90,3,2,5,6,ITIS 002
-,,,,,ITIS 007,Modelado de Procesos de Negocio,72,2,2,4,4,ITIS 003
-,,,,,ITIS 010,Programación Orientada a Objetos II,90,3,2,5,6,ITIS 006
-,,,,,ITIS 011,Herramientas Web,90,3,2,5,6,S/R
-,,,,,ITIS 012,Métodos Estadísticos,90,1,4,5,6,ITIS 009
-,,,,,CCOS 260,Redes de Computadoras,90,3,2,5,6,ITIS 009
-,,,,,ITIS 013,Ingeniría de Software I,90,3,2,5,6,ITIS 007
-,,,,,ITIS 014,Diseño de Base de datos,90,3,2,5,6,ITIS 007
-,,,,,FGUS 004,Lengua Extranjera I,72,2,2,4,4,S/R
-,,,,,FGUS 005,Lengua Extranjera II,72,2,2,4,4,FGUS 004
-,,,,,FGUS 006,Lengua Extranjera III,72,2,2,4,4,FGUS 005
-,,,,,FGUS 007,Lengua Extranjera IV,72,2,2,4,4,FGUS006
+Código,Asignatura,HT/HP por Periodo,HT por semana,HP por semana,HT/HP por semana,Creditos,Requisitos
+FGUS 001,Formación Humana y Social,72,2,2,4,4,S/R
+FGUS 002,DHPC,72,2,2,4,4,S/R
+ITIS 001,Introducción a las Matemáticas,90,0,5,5,6,S/R
+ITIS 002,Introducción a la Programación,90,3,2,5,6,S/R
+ITIS 003,Teoría General de Sistemas y Sistemas de la Información,72,0,4,4,4,S/R
+ITIS 004,Cálculo Diferencial e Integral,90,3,2,5,6,ITIS 001
+ITIS 005,Algebra Lineal con Aplicaciones,90,3,2,5,6,ITIS 001
+ITIS 008,Matemáticas Discretas,90,1,4,5,6,ITIS 005
+ITIS 009,Probabilidad y Estadística,90,1,4,5,6,ITIS 004
+ITIS 006,Programación Orientada a Objetos I,90,3,2,5,6,ITIS 002
+ITIS 007,Modelado de Procesos de Negocio,72,2,2,4,4,ITIS 003
+ITIS 010,Programación Orientada a Objetos II,90,3,2,5,6,ITIS 006
+ITIS 011,Herramientas Web,90,3,2,5,6,S/R
+ITIS 012,Métodos Estadísticos,90,1,4,5,6,ITIS 009
+CCOS 260,Redes de Computadoras,90,3,2,5,6,ITIS 009
+ITIS 013,Ingeniría de Software I,90,3,2,5,6,ITIS 007
+ITIS 014,Diseño de Base de datos,90,3,2,5,6,ITIS 007
+FGUS 004,Lengua Extranjera I,72,2,2,4,4,S/R
+FGUS 005,Lengua Extranjera II,72,2,2,4,4,FGUS 004
+FGUS 006,Lengua Extranjera III,72,2,2,4,4,FGUS 005
+FGUS 007,Lengua Extranjera IV,72,2,2,4,4,FGUS006
