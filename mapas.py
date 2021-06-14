@@ -3,10 +3,18 @@
 
 from mongoengine import connect
 from database.models import Materia
-import os
+import os,sys
 production = os.getenv("MONGODATABASE")
 local = "mongodb://localhost/scheduler"
-connect(host = local)
+
+if sys.argv[1] == "local":
+    db = connect(host = local)
+    print("connected to "+ local)
+elif sys.argv[1] == "production":
+    db = connect(host = production)
+    print("connected to "+ production)
+else:
+    print("para ejecutar seleccione la base de datos destino {local/production}")
 
 materias = []
 num_no_revisadas= 0

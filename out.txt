@@ -1,0 +1,1078 @@
+connected to mongodb://localhost/scheduler
+ITIS200 Ingeniería de Software II:
+	 Ingeniería de Software II requerido:  ITIS013
+	creado
+ITIS201 Administración de Redes:
+	 Administración de Redes requerido:  ITIS250
+	creado
+ITIS202 Inteligencia de Negocios:
+	 Inteligencia de Negocios requerido:  ITIS258
+	creado
+ITIS203 Programación de Dispositivos Móviles:
+	 Programación de Dispositivos Móviles requerido:  ITIS260
+	creado
+ITIS204 Trabajo Colaborativo:
+	 Trabajo Colaborativo requerido:  ITIS257
+	creado
+IDDS001 Administración de Proyectos:
+ITIS250 Redes y Servicios:
+	 Redes y Servicios requerido:  CCOS260
+	creado
+ITIS251 Integración de Sistemas y Arquitecturas:
+	 Integración de Sistemas y Arquitecturas requerido:  CCOS260
+	anexado
+ITIS252 Administración de Bases de Datos:
+	 Administración de Bases de Datos requerido:  ITIS014
+	creado
+ITIS253 Fundamentos de la Programación Lógica:
+	 Fundamentos de la Programación Lógica requerido:  ITIS008
+	creado
+ITIS254 Administración de Sistemas Operativos:
+	 Administración de Sistemas Operativos requerido:  ITIS010
+	creado
+ITIS255 Tecnologías Web:
+	 Tecnologías Web requerido:  ITIS011
+	creado
+ITIS256 Cómputo Distribuido:
+	 Cómputo Distribuido requerido:  ITIS010
+	anexado
+ITIS257 Modelos de Desarrollo Web:
+	 Modelos de Desarrollo Web requerido:  ITIS255
+	creado
+	 Modelos de Desarrollo Web requerido:  ITIS256
+	creado
+ITIS258 Minería de Datos:
+	 Minería de Datos requerido:  ITIS252
+	creado
+ITIS259 Diseño de la Interacción:
+	 Diseño de la Interacción requerido:  ITIS200
+	creado
+ITIS260 Servicios Web:
+	 Servicios Web requerido:  ITIS257
+	anexado
+ITIS261 Control de Calidad de Software:
+	 Control de Calidad de Software requerido:  ITIS200
+	anexado
+IDDS002 Proyectos I + DI:
+	 Proyectos I + DI requerido:  IDDS001
+	creado
+SSTI100 Servicio Social:
+PPTI101 Práctica Profesional:
+CCOS250 Circuitos lógicos:
+	 Circuitos lógicos requerido:  CCOS011
+	creado
+CCOS251 Probabilidad y Estádistica:
+	 Probabilidad y Estádistica requerido:  CCOS008
+	creado
+CCOS252 Sistemas Operativos I:
+	 Sistemas Operativos I requerido:  CCOS005
+	creado
+	 Sistemas Operativos I requerido:  CCOS013
+	creado
+CCOS253 Programación Concurrente y Pararlela:
+	 Programación Concurrente y Pararlela requerido:  CCOS013
+	anexado
+CCOS254 Sistemas Operativos II:
+	 Sistemas Operativos II requerido:  CCOS252
+	creado
+CCOS255 Fundamentos de Lenguajes de Programación:
+	 Fundamentos de Lenguajes de Programación requerido:  CCOS014
+	creado
+CCOS256 Programación Distribuida:
+	 Programación Distribuida requerido:  CCOS253
+	creado
+CCOS257 Computabilidad:
+	 Computabilidad requerido:  CCOS014
+	anexado
+CCOS258 Inteligencia Artificial:
+	 Inteligencia Artificial requerido:  CCOS012
+	creado
+CCOS259 Arquitectura Funcional de Computadoras:
+	 Arquitectura Funcional de Computadoras requerido:  CCOS250
+	creado
+CCOS260 Redes de Computadoras:
+	 Redes de Computadoras requerido:  CCOS251
+	creado
+	 Redes de Computadoras requerido:  ITIS009
+	creado
+CCOS261 Graficación:
+	 Graficación requerido:  CCOS006
+	creado
+	 Graficación requerido:  CCOS010
+	creado
+	 Graficación requerido:  ICCS003
+	creado
+CCOS262 Bases de Datos:
+	 Bases de Datos requerido:  CCOS010
+	anexado
+CCOS263 Seguridad en Redes:
+	 Seguridad en Redes requerido:  CCOS260
+	anexado
+CCOS264 Recuperación de la Información:
+	 Recuperación de la Información requerido:  CCOS251
+	anexado
+	 Recuperación de la Información requerido:  CCOS262
+	creado
+	 Recuperación de la Información requerido:  ICCS256
+	creado
+ISCO200 Ingenieria de Software:
+	 Ingenieria de Software requerido:  CCOS010
+	anexado
+ISCO201 Análisis y Diseño de Algoritmos:
+	 Análisis y Diseño de Algoritmos requerido:  CCOS013
+	anexado
+SSCO100 Servicio Social:
+PPCO101 Práctica Profesional:
+FGUS001 Formación Humana y Social:
+FGUS002 DHPC:
+ITIS001 Introducción a las Matemáticas:
+ITIS002 Introducción a la Programación:
+ITIS003 Teoría General de Sistemas y Sistemas de la Información:
+ITIS004 Cálculo Diferencial e Integral:
+	 Cálculo Diferencial e Integral requerido:  ITIS001
+	creado
+ITIS005 Algebra Lineal con Aplicaciones:
+	 Algebra Lineal con Aplicaciones requerido:  ITIS001
+	anexado
+ITIS008 Matemáticas Discretas:
+	 Matemáticas Discretas requerido:  ITIS005
+	creado
+ITIS009 Probabilidad y Estadística:
+	 Probabilidad y Estadística requerido:  ITIS004
+	creado
+ITIS006 Programación Orientada a Objetos I:
+	 Programación Orientada a Objetos I requerido:  ITIS002
+	creado
+ITIS007 Modelado de Procesos de Negocio:
+	 Modelado de Procesos de Negocio requerido:  ITIS003
+	creado
+ITIS010 Programación Orientada a Objetos II:
+	 Programación Orientada a Objetos II requerido:  ITIS006
+	creado
+ITIS011 Herramientas Web:
+ITIS012 Métodos Estadísticos:
+	 Métodos Estadísticos requerido:  ITIS009
+	anexado
+ITIS013 Ingeniría de Software I:
+	 Ingeniría de Software I requerido:  ITIS007
+	creado
+ITIS014 Diseño de Base de datos:
+	 Diseño de Base de datos requerido:  ITIS007
+	anexado
+FGUS004 Lengua Extranjera I:
+FGUS005 Lengua Extranjera II:
+	 Lengua Extranjera II requerido:  FGUS004
+	creado
+FGUS006 Lengua Extranjera III:
+	 Lengua Extranjera III requerido:  FGUS005
+	creado
+FGUS007 Lengua Extranjera IV:
+	 Lengua Extranjera IV requerido:  FGUS006
+	creado
+CCOS609 Animación por Computadora:
+CCOS700 Aplicaciones WEB:
+ICCS600 Métodos Numericos:
+	 Métodos Numericos requerido:  ICCS006
+	creado
+ICCS605 Máquinas de Aprendizaje:
+	 Máquinas de Aprendizaje requerido:  ICCS257
+	creado
+ICCS601 Lógica Matemática:
+	 Lógica Matemática requerido:  ICCS005
+	creado
+ICCS603 Lenguajes de Programación:
+	 Lenguajes de Programación requerido:  ISCO201
+	creado
+CCOS601 Ingeniería de Software Avanzada:
+	 Ingeniería de Software Avanzada requerido:  ISCO200
+	creado
+CCOS607 Interacción Humano Computadora:
+	 Interacción Humano Computadora requerido:  ISCO200
+	anexado
+CCOS608 Procesamiento Digital de Imágenes:
+	 Procesamiento Digital de Imágenes requerido:  CCOS261
+	creado
+ICCS602 Introducción a los Compiladores:
+	 Introducción a los Compiladores requerido:  CCOS013
+	anexado
+ICCS607 Tratamiento de la Información:
+	 Tratamiento de la Información requerido:  ICCS256
+	anexado
+ICCS606 Simulación:
+	 Simulación requerido:  CCOS251
+	anexado
+ICCS604 Cómputo Obicuo:
+	 Cómputo Obicuo requerido:  ICCS258
+	creado
+ICCS611 Arquitectura Avanzada de Computadoras:
+	 Arquitectura Avanzada de Computadoras requerido:  ISCC201
+	creado
+ICCS608 Investigación de Operaciones:
+	 Investigación de Operaciones requerido:  ICCS600
+	creado
+ICCS609 Súper Cómputo:
+	 Súper Cómputo requerido:  ICCS603
+	creado
+ICCS610 Sistemas Interativos Modernos:
+	 Sistemas Interativos Modernos requerido:  ICCS603
+	anexado
+CCOS600 Web Semático:
+	 Web Semático requerido:  ICCS257
+	anexado
+	 Web Semático requerido:  CCOS262
+	anexado
+ICCS614 Almacenamiento de Datos:
+	 Almacenamiento de Datos requerido:  ICCS257
+	anexado
+ICCS613 Control Digital:
+	 Control Digital requerido:  ICCS254
+	creado
+ICCS617 Robótica Aplicada:
+	 Robótica Aplicada requerido:  ICCS255
+	creado
+ICCS615 Reconocimiento de Patrones:
+	 Reconocimiento de Patrones requerido:  ICCS605
+	creado
+ICCS612 Sistemas de Tiempo Real:
+	 Sistemas de Tiempo Real requerido:  ICCS252
+	creado
+ICCS616 Visión y Animación por Computadora:
+	 Visión y Animación por Computadora requerido:  CCOS608
+	creado
+CCOS610 Aprendizaje Automático y Heurísticas:
+	 Aprendizaje Automático y Heurísticas requerido:  CCOS258
+	creado
+CCOS616 Compiladores:
+	 Compiladores requerido:  CCOS014
+	anexado
+CCOS604 Criptografía:
+	 Criptografía requerido:  CCOS260
+	anexado
+CCOS605 Demostración Automática de Teoremas:
+	 Demostración Automática de Teoremas requerido:  CCOS012
+	anexado
+CCOS614 Estadística Avanzada:
+	 Estadística Avanzada requerido:  CCOS251
+	anexado
+CCOS606 Métodos Formales:
+	 Métodos Formales requerido:  CCOS012
+	anexado
+CCOS613 Programación de Dispositivos Móviles:
+	 Programación de Dispositivos Móviles requerido:  CCOS013
+	anexado
+CCOS603 Redes Avanzadas:
+	 Redes Avanzadas requerido:  CCOS263
+	creado
+ICCS257 Minería de Datos:
+	 Minería de Datos requerido:  CCOS262
+	anexado
+	 Minería de Datos requerido:  CCOS251
+	anexado
+CCOS602 Bases de Datos Avanzadas:
+	 Bases de Datos Avanzadas requerido:  CCOS262
+	anexado
+CCOS611 Big Data:
+	 Big Data requerido:  CCOS262
+	anexado
+CCOS612 Bases de Datos Distribuidas:
+	 Bases de Datos Distribuidas requerido:  CCOS262
+	anexado
+CCOS615 Programación de Videojuegos:
+	 Programación de Videojuegos requerido:  CCOS261
+	anexado
+CCOS800 Tópicos Selectos de la Computación I:
+	 Tópicos Selectos de la Computación I requerido:  ISCO200
+	anexado
+CCOS801 Tópicos Selectos de la Computación II:
+	 Tópicos Selectos de la Computación II requerido:  ISCO200
+	anexado
+CCOS802 Microprocesadores:
+	 Microprocesadores requerido:  CCOS250
+	anexado
+ICCS001 Matemáticas:
+CCOS003 Álgebra Superior:
+CCOS007 Cálculo Diferencial:
+	 Cálculo Diferencial requerido:  ICCS001
+	creado
+	 Cálculo Diferencial requerido:  CCOS002
+	creado
+ICCS003 Álgebra Lineal con Elementos en Geometría Analítica:
+	 Álgebra Lineal con Elementos en Geometría Analítica requerido:  CCOS003
+	creado
+CCOS008 Cálculo Integral:
+	 Cálculo Integral requerido:  CCOS007
+	creado
+ICCS002 Física I:
+	 Física I requerido:  ICCS001
+	anexado
+ICCS004 Física II:
+	 Física II requerido:  ICCS002
+	creado
+CCOS001 Metodología de la Programación:
+CCOS005 Ensamblador:
+	 Ensamblador requerido:  CCOS004
+	creado
+CCOS004 Programación I:
+	 Programación I requerido:  CCOS001
+	creado
+CCOS010 Programación II:
+	 Programación II requerido:  CCOS004
+	anexado
+ICCS006 Ecuaciones Diferenciales:
+	 Ecuaciones Diferenciales requerido:  CCOS008
+	anexado
+ICCS005 Matemáticas Discretas:
+	 Matemáticas Discretas requerido:  ICCS003
+	anexado
+CCOS013 Estructuras de Datos:
+	 Estructuras de Datos requerido:  CCOS010
+	anexado
+ICCS007 Circuitos Eléctricos:
+	 Circuitos Eléctricos requerido:  ICCS004
+	creado
+CCOS002 Matemáticas Elementales:
+CCOS006 Álgebra Lineal:
+	 Álgebra Lineal requerido:  CCOS003
+	anexado
+CCOS009 Estructuras Discretas:
+	 Estructuras Discretas requerido:  CCOS003
+	anexado
+CCOS011 Circuitos Eléctricos:
+	 Circuitos Eléctricos requerido:  CCOS007
+	anexado
+CCOS012 Lógica Matemática:
+	 Lógica Matemática requerido:  CCOS009
+	creado
+CCOS014 Lenguajes Formales y Autómatas:
+	 Lenguajes Formales y Autómatas requerido:  CCOS009
+	anexado
+ITIS700 Desarrollo de Videojuegos:
+ITIS701 Tecnologías Emergentes para TICS:
+ITIS702 Desarrollo de Sitios WEB:
+ITIS600 Desarrollo Basado en Modelos:
+	 Desarrollo Basado en Modelos requerido:  ITIS257
+	anexado
+ITIS601 Cómputo Orientado a Servicios:
+	 Cómputo Orientado a Servicios requerido:  ITIS260
+	anexado
+ITIS602 Tecnologías de la Web Semántica:
+	 Tecnologías de la Web Semántica requerido:  ITIS260
+	anexado
+ITIS603 Ingeniería de Conociemiento:
+	 Ingeniería de Conociemiento requerido:  ITIS253
+	creado
+ITIS604 Inteligencia Artificial:
+	 Inteligencia Artificial requerido:  ITIS253
+	anexado
+ITIS605 Metodos Formales:
+	 Metodos Formales requerido:  ITIS008
+	anexado
+ITIS606 Aprendizaje Artificial:
+	 Aprendizaje Artificial requerido:  ITIS604
+	creado
+ITIS607 Investigacion de Operaciones:
+	 Investigacion de Operaciones requerido:  ITIS005
+	anexado
+ITIS608 Introducción al Cómputo de Alto Rendimiento:
+	 Introducción al Cómputo de Alto Rendimiento requerido:  ITIS254
+	creado
+ITIS609 Logística:
+	 Logística requerido:  ITIS607
+	creado
+ITIS610 Nuevas Tendencias de la Ingeniería de Software:
+	 Nuevas Tendencias de la Ingeniería de Software requerido:  ITIS200
+	anexado
+ITIS611 Arquitectura de Software:
+	 Arquitectura de Software requerido:  ITIS200
+	anexado
+ITIS612 Teoría de Decisiones:
+	 Teoría de Decisiones requerido:  ITIS258
+	anexado
+ITIS613 Cómputo de Alto Rendimiento y Clusters:
+	 Cómputo de Alto Rendimiento y Clusters requerido:  ITIS608
+	creado
+ICCS250 Circuitos Electrónicos:
+	 Circuitos Electrónicos requerido:  ICCS007
+	creado
+ICCS251 Programación Concurrente y Pararlela:
+	 Programación Concurrente y Pararlela requerido:  CCOS013
+	anexado
+	 Programación Concurrente y Pararlela requerido:  ISCO201
+	anexado
+ICCS252 Programación Distribuida Aplicada:
+	 Programación Distribuida Aplicada requerido:  ICCS251
+	creado
+ICCS253 Diseño Digital:
+	 Diseño Digital requerido:  ICCS250
+	creado
+ICCS254 Teoría de Control:
+	 Teoría de Control requerido:  ICCS006
+	anexado
+ICCS255 Técnicas de Inteligencia Artificial:
+	 Técnicas de Inteligencia Artificial requerido:  ISCO201
+	anexado
+ISCC201 Arquitectura de Computadoras:
+	 Arquitectura de Computadoras requerido:  ICCS253
+	creado
+ICCS259 Modelo de Redes:
+	 Modelo de Redes requerido:  CCOS251
+	anexado
+ICCS258 Desarrollo de Aplicaciones Web:
+	 Desarrollo de Aplicaciones Web requerido:  IDDS001
+	anexado
+ICCS260 Redes Inalámbricas:
+	 Redes Inalámbricas requerido:  ICCS259
+	creado
+ICCS261 Administración de Redes:
+	 Administración de Redes requerido:  ICCS260
+	creado
+ICCS256 Bases de Datos para Ingeniería:
+	 Bases de Datos para Ingeniería requerido:  CCOS013
+	anexado
+ICCS262 Intercomunicación Seguridad en Redes:
+	 Intercomunicación Seguridad en Redes requerido:  ICCS261
+	creado
+ISCC200 Desarrollo de Aplicaciones Móviles:
+	 Desarrollo de Aplicaciones Móviles requerido:  ICCS258
+	anexado
+ISCC202 Sistemas Empotrados:
+	 Sistemas Empotrados requerido:  ISCC201
+	anexado
+SSCC100 Servicio Social:
+PPCc101 Práctica Profesional:
+
+modificadas: 
+- ITIS013 Ingeniría de Software I 
+requ: ['ITIS007']
+abre: ['ITIS200']
+
+- ITIS250 Redes y Servicios 
+requ: ['CCOS260']
+abre: ['ITIS201']
+
+- ITIS258 Minería de Datos 
+requ: ['ITIS252']
+abre: ['ITIS202', 'ITIS612']
+
+- ITIS260 Servicios Web 
+requ: ['ITIS257']
+abre: ['ITIS203', 'ITIS601', 'ITIS602']
+
+- ITIS257 Modelos de Desarrollo Web 
+requ: ['ITIS255', 'ITIS256']
+abre: ['ITIS204', 'ITIS260', 'ITIS600']
+
+- CCOS260 Redes de Computadoras 
+requ: ['CCOS251', 'ITIS009']
+abre: ['ITIS250', 'ITIS251', 'CCOS263', 'CCOS604']
+
+- ITIS014 Diseño de Base de datos 
+requ: ['ITIS007']
+abre: ['ITIS252']
+
+- ITIS008 Matemáticas Discretas 
+requ: ['ITIS005']
+abre: ['ITIS253', 'ITIS605']
+
+- ITIS010 Programación Orientada a Objetos II 
+requ: ['ITIS006']
+abre: ['ITIS254', 'ITIS256']
+
+- ITIS011 Herramientas Web 
+requ: ['S/R']
+abre: ['ITIS255']
+
+- ITIS255 Tecnologías Web 
+requ: ['ITIS011']
+abre: ['ITIS257']
+
+- ITIS256 Cómputo Distribuido 
+requ: ['ITIS010']
+abre: ['ITIS257']
+
+- ITIS252 Administración de Bases de Datos 
+requ: ['ITIS014']
+abre: ['ITIS258']
+
+- ITIS200 Ingeniería de Software II 
+requ: ['ITIS013']
+abre: ['ITIS259', 'ITIS261', 'ITIS610', 'ITIS611']
+
+- IDDS001 Administración de Proyectos 
+requ: ['NivelBásico']
+abre: ['IDDS002', 'ICCS258']
+
+- CCOS011 Circuitos Eléctricos 
+requ: ['CCOS007']
+abre: ['CCOS250']
+
+- CCOS008 Cálculo Integral 
+requ: ['CCOS007']
+abre: ['CCOS251', 'ICCS006']
+
+- CCOS005 Ensamblador 
+requ: ['CCOS004']
+abre: ['CCOS252']
+
+- CCOS013 Estructuras de Datos 
+requ: ['CCOS010']
+abre: ['CCOS252', 'CCOS253', 'ISCO201', 'ICCS602', 'CCOS613', 'ICCS251', 'ICCS256']
+
+- CCOS252 Sistemas Operativos I 
+requ: ['CCOS005', 'CCOS013']
+abre: ['CCOS254']
+
+- CCOS014 Lenguajes Formales y Autómatas 
+requ: ['CCOS009']
+abre: ['CCOS255', 'CCOS257', 'CCOS616']
+
+- CCOS253 Programación Concurrente y Pararlela 
+requ: ['CCOS013']
+abre: ['CCOS256']
+
+- CCOS012 Lógica Matemática 
+requ: ['CCOS009']
+abre: ['CCOS258', 'CCOS605', 'CCOS606']
+
+- CCOS250 Circuitos lógicos 
+requ: ['CCOS011']
+abre: ['CCOS259', 'CCOS802']
+
+- CCOS251 Probabilidad y Estádistica 
+requ: ['CCOS008']
+abre: ['CCOS260', 'CCOS264', 'ICCS606', 'CCOS614', 'ICCS257', 'ICCS259']
+
+- ITIS009 Probabilidad y Estadística 
+requ: ['ITIS004']
+abre: ['CCOS260', 'ITIS012']
+
+- CCOS006 Álgebra Lineal 
+requ: ['CCOS003']
+abre: ['CCOS261']
+
+- CCOS010 Programación II 
+requ: ['CCOS004']
+abre: ['CCOS261', 'CCOS262', 'ISCO200', 'CCOS013']
+
+- ICCS003 Álgebra Lineal con Elementos en Geometría Analítica 
+requ: ['CCOS003']
+abre: ['CCOS261', 'ICCS005']
+
+- CCOS262 Bases de Datos 
+requ: ['CCOS010']
+abre: ['CCOS264', 'CCOS600', 'ICCS257', 'CCOS602', 'CCOS611', 'CCOS612']
+
+- ICCS256 Bases de Datos para Ingeniería 
+requ: ['CCOS013']
+abre: ['CCOS264', 'ICCS607']
+
+- ITIS001 Introducción a las Matemáticas 
+requ: ['S/R']
+abre: ['ITIS004', 'ITIS005']
+
+- ITIS005 Algebra Lineal con Aplicaciones 
+requ: ['ITIS001']
+abre: ['ITIS008', 'ITIS607']
+
+- ITIS004 Cálculo Diferencial e Integral 
+requ: ['ITIS001']
+abre: ['ITIS009']
+
+- ITIS002 Introducción a la Programación 
+requ: ['S/R']
+abre: ['ITIS006']
+
+- ITIS003 Teoría General de Sistemas y Sistemas de la Información 
+requ: ['S/R']
+abre: ['ITIS007']
+
+- ITIS006 Programación Orientada a Objetos I 
+requ: ['ITIS002']
+abre: ['ITIS010']
+
+- ITIS007 Modelado de Procesos de Negocio 
+requ: ['ITIS003']
+abre: ['ITIS013', 'ITIS014']
+
+- FGUS004 Lengua Extranjera I 
+requ: ['S/R']
+abre: ['FGUS005']
+
+- FGUS005 Lengua Extranjera II 
+requ: ['FGUS004']
+abre: ['FGUS006']
+
+- FGUS006 Lengua Extranjera III 
+requ: ['FGUS005']
+abre: ['FGUS007']
+
+- ICCS006 Ecuaciones Diferenciales 
+requ: ['CCOS008']
+abre: ['ICCS600', 'ICCS254']
+
+- ICCS257 Minería de Datos 
+requ: ['CCOS262', 'CCOS251']
+abre: ['ICCS605', 'CCOS600', 'ICCS614']
+
+- ICCS005 Matemáticas Discretas 
+requ: ['ICCS003']
+abre: ['ICCS601']
+
+- ISCO201 Análisis y Diseño de Algoritmos 
+requ: ['CCOS013']
+abre: ['ICCS603', 'ICCS251', 'ICCS255']
+
+- ISCO200 Ingenieria de Software 
+requ: ['CCOS010']
+abre: ['CCOS601', 'CCOS607', 'CCOS800', 'CCOS801']
+
+- CCOS261 Graficación 
+requ: ['CCOS006', 'CCOS010', 'ICCS003']
+abre: ['CCOS608', 'CCOS615']
+
+- ICCS258 Desarrollo de Aplicaciones Web 
+requ: ['IDDS001']
+abre: ['ICCS604', 'ISCC200']
+
+- ISCC201 Arquitectura de Computadoras 
+requ: ['ICCS253']
+abre: ['ICCS611', 'ISCC202']
+
+- ICCS600 Métodos Numericos 
+requ: ['ICCS006']
+abre: ['ICCS608']
+
+- ICCS603 Lenguajes de Programación 
+requ: ['ISCO201']
+abre: ['ICCS609', 'ICCS610']
+
+- ICCS254 Teoría de Control 
+requ: ['ICCS006']
+abre: ['ICCS613']
+
+- ICCS255 Técnicas de Inteligencia Artificial 
+requ: ['ISCO201']
+abre: ['ICCS617']
+
+- ICCS605 Máquinas de Aprendizaje 
+requ: ['ICCS257']
+abre: ['ICCS615']
+
+- ICCS252 Programación Distribuida Aplicada 
+requ: ['ICCS251']
+abre: ['ICCS612']
+
+- CCOS608 Procesamiento Digital de Imágenes 
+requ: ['CCOS261']
+abre: ['ICCS616']
+
+- CCOS258 Inteligencia Artificial 
+requ: ['CCOS012']
+abre: ['CCOS610']
+
+- CCOS263 Seguridad en Redes 
+requ: ['CCOS260']
+abre: ['CCOS603']
+
+- ICCS001 Matemáticas 
+requ: ['S/R']
+abre: ['CCOS007', 'ICCS002']
+
+- CCOS002 Matemáticas Elementales 
+requ: ['S/R']
+abre: ['CCOS007']
+
+- CCOS003 Álgebra Superior 
+requ: ['S/R']
+abre: ['ICCS003', 'CCOS006', 'CCOS009']
+
+- CCOS007 Cálculo Diferencial 
+requ: ['ICCS001', 'CCOS002']
+abre: ['CCOS008', 'CCOS011']
+
+- ICCS002 Física I 
+requ: ['ICCS001']
+abre: ['ICCS004']
+
+- CCOS004 Programación I 
+requ: ['CCOS001']
+abre: ['CCOS005', 'CCOS010']
+
+- CCOS001 Metodología de la Programación 
+requ: ['S/R']
+abre: ['CCOS004']
+
+- ICCS004 Física II 
+requ: ['ICCS002']
+abre: ['ICCS007']
+
+- CCOS009 Estructuras Discretas 
+requ: ['CCOS003']
+abre: ['CCOS012', 'CCOS014']
+
+- ITIS253 Fundamentos de la Programación Lógica 
+requ: ['ITIS008']
+abre: ['ITIS603', 'ITIS604']
+
+- ITIS604 Inteligencia Artificial 
+requ: ['ITIS253']
+abre: ['ITIS606']
+
+- ITIS254 Administración de Sistemas Operativos 
+requ: ['ITIS010']
+abre: ['ITIS608']
+
+- ITIS607 Investigacion de Operaciones 
+requ: ['ITIS005']
+abre: ['ITIS609']
+
+- ITIS608 Introducción al Cómputo de Alto Rendimiento 
+requ: ['ITIS254']
+abre: ['ITIS613']
+
+- ICCS007 Circuitos Eléctricos 
+requ: ['ICCS004']
+abre: ['ICCS250']
+
+- ICCS251 Programación Concurrente y Pararlela 
+requ: ['CCOS013', 'ISCO201']
+abre: ['ICCS252']
+
+- ICCS250 Circuitos Electrónicos 
+requ: ['ICCS007']
+abre: ['ICCS253']
+
+- ICCS253 Diseño Digital 
+requ: ['ICCS250']
+abre: ['ISCC201']
+
+- ICCS259 Modelo de Redes 
+requ: ['CCOS251']
+abre: ['ICCS260']
+
+- ICCS260 Redes Inalámbricas 
+requ: ['ICCS259']
+abre: ['ICCS261']
+
+- ICCS261 Administración de Redes 
+requ: ['ICCS260']
+abre: ['ICCS262']
+
+con requisitos: 132
+         otros: 23
+REVISION: 
+0 Ingeniería de Software II
+1 Administración de Redes
+2 Administración de Proyectos
+3 Redes y Servicios
+4 Administración de Bases de Datos
+5 Fundamentos de la Programación Lógica
+6 Administración de Sistemas Operativos
+7 Tecnologías Web
+8 Cómputo Distribuido
+9 Modelos de Desarrollo Web
+10 Minería de Datos
+11 Minería de Datos
+12 Servicios Web
+13 Circuitos lógicos
+14 Probabilidad y Estádistica
+15 Sistemas Operativos I
+16 Programación Concurrente y Pararlela
+17 Programación Concurrente y Pararlela
+18 Inteligencia Artificial
+19 Inteligencia Artificial
+20 Redes de Computadoras
+21 Graficación
+22 Bases de Datos
+23 Seguridad en Redes
+24 Ingenieria de Software
+25 Análisis y Diseño de Algoritmos
+26 Introducción a las Matemáticas
+27 Introducción a la Programación
+28 Teoría General de Sistemas y Sistemas de la Información
+29 Cálculo Diferencial e Integral
+30 Algebra Lineal con Aplicaciones
+31 Matemáticas Discretas
+32 Matemáticas Discretas
+33 Probabilidad y Estadística
+34 Programación Orientada a Objetos I
+35 Modelado de Procesos de Negocio
+36 Programación Orientada a Objetos II
+37 Herramientas Web
+38 Ingeniría de Software I
+39 Diseño de Base de datos
+40 Lengua Extranjera I
+41 Lengua Extranjera II
+42 Lengua Extranjera III
+43 Métodos Numericos
+44 Máquinas de Aprendizaje
+45 Lógica Matemática
+46 Lenguajes de Programación
+47 Procesamiento Digital de Imágenes
+48 Minería de Datos
+49 Minería de Datos
+50 Matemáticas
+51 Álgebra Superior
+52 Cálculo Diferencial
+53 Álgebra Lineal con Elementos en Geometría Analítica
+54 Cálculo Integral
+55 Física I
+56 Física II
+57 Metodología de la Programación
+58 Ensamblador
+59 Programación I
+60 Programación II
+61 Ecuaciones Diferenciales
+62 Matemáticas Discretas
+63 Matemáticas Discretas
+64 Estructuras de Datos
+65 Circuitos Eléctricos
+66 Circuitos Eléctricos
+67 Matemáticas Elementales
+68 Álgebra Lineal
+69 Estructuras Discretas
+70 Circuitos Eléctricos
+71 Circuitos Eléctricos
+72 Lógica Matemática
+73 Lenguajes Formales y Autómatas
+74 Inteligencia Artificial
+75 Inteligencia Artificial
+76 Investigacion de Operaciones
+77 Introducción al Cómputo de Alto Rendimiento
+78 Circuitos Electrónicos
+79 Programación Concurrente y Pararlela
+80 Programación Concurrente y Pararlela
+81 Programación Distribuida Aplicada
+82 Diseño Digital
+83 Teoría de Control
+84 Técnicas de Inteligencia Artificial
+85 Arquitectura de Computadoras
+86 Modelo de Redes
+87 Desarrollo de Aplicaciones Web
+88 Redes Inalámbricas
+89 Administración de Redes
+90 Bases de Datos para Ingeniería
+
+sin requisitos
+0_ITIS202 Inteligencia de Negocios
+	 Requeridas :['ITIS258']
+
+1_ITIS203 Programación de Dispositivos Móviles
+	 Requeridas :['ITIS260']
+
+2_ITIS204 Trabajo Colaborativo
+	 Requeridas :['ITIS257']
+
+3_ITIS251 Integración de Sistemas y Arquitecturas
+	 Requeridas :['CCOS260']
+
+4_ITIS259 Diseño de la Interacción
+	 Requeridas :['ITIS200']
+
+5_ITIS261 Control de Calidad de Software
+	 Requeridas :['ITIS200']
+
+6_IDDS002 Proyectos I + DI
+	 Requeridas :['IDDS001']
+
+7_SSTI100 Servicio Social
+	 Requeridas :['70%delosCréditos']
+
+8_PPTI101 Práctica Profesional
+	 Requeridas :['70%delosCréditos']
+
+9_CCOS254 Sistemas Operativos II
+	 Requeridas :['CCOS252']
+
+10_CCOS255 Fundamentos de Lenguajes de Programación
+	 Requeridas :['CCOS014']
+
+11_CCOS256 Programación Distribuida
+	 Requeridas :['CCOS253']
+
+12_CCOS257 Computabilidad
+	 Requeridas :['CCOS014']
+
+13_CCOS259 Arquitectura Funcional de Computadoras
+	 Requeridas :['CCOS250']
+
+14_CCOS264 Recuperación de la Información
+	 Requeridas :['CCOS251', 'CCOS262', 'ICCS256']
+
+15_SSCO100 Servicio Social
+	 Requeridas :['70%créditoscubiertos']
+
+16_PPCO101 Práctica Profesional
+	 Requeridas :['70%créditoscubiertos']
+
+17_FGUS001 Formación Humana y Social
+	 Requeridas :['S/R']
+
+18_FGUS002 DHPC
+	 Requeridas :['S/R']
+
+19_ITIS012 Métodos Estadísticos
+	 Requeridas :['ITIS009']
+
+20_FGUS007 Lengua Extranjera IV
+	 Requeridas :['FGUS006']
+
+21_CCOS609 Animación por Computadora
+	 Requeridas :['S/R', 'CCOS261']
+
+22_CCOS700 Aplicaciones WEB
+	 Requeridas :['S/R']
+
+23_CCOS601 Ingeniería de Software Avanzada
+	 Requeridas :['ISCO200']
+
+24_CCOS607 Interacción Humano Computadora
+	 Requeridas :['ISCO200']
+
+25_ICCS602 Introducción a los Compiladores
+	 Requeridas :['CCOS013']
+
+26_ICCS607 Tratamiento de la Información
+	 Requeridas :['ICCS256']
+
+27_ICCS606 Simulación
+	 Requeridas :['CCOS251']
+
+28_ICCS604 Cómputo Obicuo
+	 Requeridas :['ICCS258']
+
+29_ICCS611 Arquitectura Avanzada de Computadoras
+	 Requeridas :['ISCC201']
+
+30_ICCS608 Investigación de Operaciones
+	 Requeridas :['ICCS600']
+
+31_ICCS609 Súper Cómputo
+	 Requeridas :['ICCS603']
+
+32_ICCS610 Sistemas Interativos Modernos
+	 Requeridas :['ICCS603']
+
+33_CCOS600 Web Semático
+	 Requeridas :['ICCS257', 'CCOS262']
+
+34_ICCS614 Almacenamiento de Datos
+	 Requeridas :['ICCS257']
+
+35_ICCS613 Control Digital
+	 Requeridas :['ICCS254']
+
+36_ICCS617 Robótica Aplicada
+	 Requeridas :['ICCS255']
+
+37_ICCS615 Reconocimiento de Patrones
+	 Requeridas :['ICCS605']
+
+38_ICCS612 Sistemas de Tiempo Real
+	 Requeridas :['ICCS252']
+
+39_ICCS616 Visión y Animación por Computadora
+	 Requeridas :['CCOS608']
+
+40_CCOS610 Aprendizaje Automático y Heurísticas
+	 Requeridas :['CCOS258']
+
+41_CCOS616 Compiladores
+	 Requeridas :['CCOS014']
+
+42_CCOS604 Criptografía
+	 Requeridas :['CCOS260']
+
+43_CCOS605 Demostración Automática de Teoremas
+	 Requeridas :['CCOS012']
+
+44_CCOS614 Estadística Avanzada
+	 Requeridas :['CCOS251']
+
+45_CCOS606 Métodos Formales
+	 Requeridas :['CCOS012']
+
+46_CCOS613 Programación de Dispositivos Móviles
+	 Requeridas :['CCOS013']
+
+47_CCOS603 Redes Avanzadas
+	 Requeridas :['CCOS263']
+
+48_CCOS602 Bases de Datos Avanzadas
+	 Requeridas :['CCOS262']
+
+49_CCOS611 Big Data
+	 Requeridas :['CCOS262']
+
+50_CCOS612 Bases de Datos Distribuidas
+	 Requeridas :['CCOS262']
+
+51_CCOS615 Programación de Videojuegos
+	 Requeridas :['CCOS261']
+
+52_CCOS800 Tópicos Selectos de la Computación I
+	 Requeridas :['ISCO200']
+
+53_CCOS801 Tópicos Selectos de la Computación II
+	 Requeridas :['ISCO200']
+
+54_CCOS802 Microprocesadores
+	 Requeridas :['CCOS250']
+
+55_ITIS700 Desarrollo de Videojuegos
+	 Requeridas :['S/R']
+
+56_ITIS701 Tecnologías Emergentes para TICS
+	 Requeridas :['S/R']
+
+57_ITIS702 Desarrollo de Sitios WEB
+	 Requeridas :['S/R']
+
+58_ITIS600 Desarrollo Basado en Modelos
+	 Requeridas :['ITIS257']
+
+59_ITIS601 Cómputo Orientado a Servicios
+	 Requeridas :['ITIS260']
+
+60_ITIS602 Tecnologías de la Web Semántica
+	 Requeridas :['ITIS260']
+
+61_ITIS603 Ingeniería de Conociemiento
+	 Requeridas :['ITIS253']
+
+62_ITIS605 Metodos Formales
+	 Requeridas :['ITIS008']
+
+63_ITIS606 Aprendizaje Artificial
+	 Requeridas :['ITIS604']
+
+64_ITIS609 Logística
+	 Requeridas :['ITIS607']
+
+65_ITIS610 Nuevas Tendencias de la Ingeniería de Software
+	 Requeridas :['ITIS200']
+
+66_ITIS611 Arquitectura de Software
+	 Requeridas :['ITIS200']
+
+67_ITIS612 Teoría de Decisiones
+	 Requeridas :['ITIS258']
+
+68_ITIS613 Cómputo de Alto Rendimiento y Clusters
+	 Requeridas :['ITIS608']
+
+69_ICCS262 Intercomunicación Seguridad en Redes
+	 Requeridas :['ICCS261']
+
+70_ISCC200 Desarrollo de Aplicaciones Móviles
+	 Requeridas :['ICCS258']
+
+71_ISCC202 Sistemas Empotrados
+	 Requeridas :['ISCC201']
+
+72_SSCC100 Servicio Social
+	 Requeridas :['70%créditoscubiertos']
+
+73_PPCc101 Práctica Profesional
+	 Requeridas :['70%créditoscubiertos']
+

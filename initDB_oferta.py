@@ -1,6 +1,7 @@
 from mongoengine import connect
 from api.utils import *
 from database.models import OpcionMateria, ProgramaDisponible, Plan, Materia, LugarYHora, Profesor
+import sys
 
 day = { "L":"Lunes",
         "A":"Martes",
@@ -10,9 +11,14 @@ day = { "L":"Lunes",
 
 production = os.environ.get('MONGODATABASE')
 local = 'mongodb://localhost/scheduler'
-db = connect(host = local)
-
-#print("connected to "+ configuration)
+if sys.argv[1] == "local":
+    db = connect(host = local)
+    print("connected to "+ local)
+elif sys.argv[1] == "production":
+    db = connect(host = production)
+    print("connected to "+ production)
+else:
+    print("para ejecutar seleccione la base de datos destino {local/production}")
 csvs = getDocsinDir("api/HORARIO/")
 docs = getCSVs(csvs)
 
@@ -81,5 +87,4 @@ for key in materias_por_nivel:
     print("saved {} - {}".format(key,len(materias_por_nivel[key])))
 
 print("Succesfull: {} Failed: {}".format(conta_total,conta_falla))
-
 

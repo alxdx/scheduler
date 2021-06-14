@@ -1,5 +1,5 @@
 import pandas as pd
-import os
+import os,sys
 from api.utils import *
 from database.models import Materia,SimpleMateria,Plan
 
@@ -7,8 +7,15 @@ from mongoengine import connect,get_db
 
 production = os.environ.get('MONGODATABASE')
 local = 'mongodb://localhost/scheduler'
-db = connect(host = local)
+if sys.argv[1] == "local":
+    db = connect(host = local)
+elif sys.argv[1] == "production":
+    db = connect(host = production)
+else:
+    print("para ejecutar seleccione la base de datos destino {local/production}")
 
+Materia.drop_collection()
+Plan.drop_collection()
 #print("connected to "+ configuration)
 csvs = getDocsinDir("api/PLAN/")
 docs = getCSVs(csvs)
@@ -31,9 +38,18 @@ for dc,name in zip(docs,csvs):
                     hrs_total_sem = obj["HT/HP por semana"],creditos=obj["Creditos"],
                     requeridas = list(map(lambda x : x.replace(' ',''),obj["Requisitos"].split(" y "))))
             #print("checking {}".format(obj["Código"]))
-            if not Materia.objects(mat_id = obj["Código"]):
+            if Materia.objects(mat_id = obj["Código"]).count() == 0:
                 mat.save()
                 print("saved {}".format(obj["Código"]))
+            else:
+                to_update = Materia.objects.get(mat_id = obj["Código"])
+                lst = to_update.requeridas
+                for x in mat.requeridas:
+                    if x not in lst:
+                        lst.append(x)
+                #print(lst)
+                to_update.update(requeridas = lst)
+                print("actualizado {}".format(obj["Código"]))
             elems.append(SimpleMateria(mat_id = obj["Código"],asignatura = obj["Asignatura"]))
     nn=name.split("/")[2][5:-4]
     print("Checked {}".format(nn))
