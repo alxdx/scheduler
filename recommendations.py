@@ -10,6 +10,7 @@ class Recomendacion():
         res = []
     def show_db(self):
         print(get_db())
+
     def get_recomendacion(self, hra_ini:int, hra_fin:int, max_val = 6, cursadas = [] ,requeridas = []) -> list:
         if max_val > 6:
             max_val = 6
@@ -32,6 +33,7 @@ class Recomendacion():
         return self.res
 
     def horario(self):
+        print(self.res)
         for r in self.res:
             print("{} {} {}".format(r["_id"],r["mat_id"],r["asignatura"]))
 
@@ -51,12 +53,21 @@ class Recomendacion():
             1900:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
             2000:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"}
         }
-        encontradas = 0
+        encontradas = []
         for elem in self.res:
-            for d in elem["lugar_y_hora"]:
-                hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
-                for h in range(0,hrs,100):
-                    dict_horario[d["hora_inicio"]+h][d["dia"]]= elem["_id"] +" "+ elem["asignatura"]
+            if elem["mat_id"] not in encontradas:
+                present = False
+                for d in elem["lugar_y_hora"]:
+                    hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
+                    for h in range(0,hrs,100):
+                        if dict_horario[d["hora_inicio"]+h][d["dia"]] != "-":
+                            present = True
+                if not present:
+                    encontradas.append(elem["mat_id"])
+                    for d in elem["lugar_y_hora"]:
+                        hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
+                        for h in range(0,hrs,100):
+                            dict_horario[d["hora_inicio"]+h][d["dia"]] = elem["_id"] +" "+ elem["asignatura"]
 
         print("{:^20}{:^20}{:^20}{:^20}{:^20}{:^20}".format("HORA","Lunes","Martes","Miercoles","Jueves","Viernes\n"))
 
@@ -69,9 +80,10 @@ class Recomendacion():
                 dict_horario[x]["Jueves"],
                 dict_horario[x]["Viernes"]))
             
-
-ini = 1500
-fin = 1900
+        print("materias recomendadas {}".format(len(encontradas)))
+        print(encontradas)
+ini = 700
+fin = 1300
 cur = ["FGUS001","CCOS002","CCOS003"]
 ## ini, fin = [int(x) for x in input().split()]
 p = Recomendacion()
