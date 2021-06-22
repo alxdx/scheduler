@@ -170,12 +170,13 @@ pre code {
 .required {
   color: #f00;
 }
-    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>API SCHEDULER <small>version .01</small></h1><p>https://hidden-wave-33419.herokuapp.com/api</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="auth" class="panel-title">Metodos de autenticación</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_auth_signup"><span class="parent">/auth</span>/signup</a> <span class="methods"><a href="#auth_signup_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_auth_signup" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#auth_signup_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Crea un nuevo usuario</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="auth_signup_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/auth</span>/signup</h4></div><div class="modal-body"><div class="alert alert-info"><p>Crea un nuevo usuario</p></div><ul class="nav nav-tabs"><li class="active"><a href="#auth_signup_post_request" data-toggle="tab">Request</a></li><li><a href="#auth_signup_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="auth_signup_post_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>matricula</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>name</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>mail</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>carrera</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>password</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>API SCHEDULER <small>version .01</small></h1><p>https://hidden-wave-33419.herokuapp.com/api</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="auth" class="panel-title">Metodos de autenticación</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_auth_signup"><span class="parent">/auth</span>/signup</a> <span class="methods"><a href="#auth_signup_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_auth_signup" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#auth_signup_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Crea un nuevo usuario</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="auth_signup_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/auth</span>/signup</h4></div><div class="modal-body"><div class="alert alert-info"><p>Crea un nuevo usuario</p></div><ul class="nav nav-tabs"><li class="active"><a href="#auth_signup_post_request" data-toggle="tab">Request</a></li><li><a href="#auth_signup_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="auth_signup_post_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>matricula</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>name</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>mail</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>carrera</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>password</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>materias_cursadas</strong>: <em>(string)</em><p>los mat_id de las materias que el alumno ya ha cursado. Si se manda una lista vacia despues se puede actualizar con la ruta /plan/matricula</p></li></ul><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "matricula": "201750505",
   "name": "pepe pollo",
   "mail": "correo@mail.com",
   "carrera": "ITI",
-  "password": "jijiji"
+  "password": "jijiji",
+  "materias_cursadas": []
 }</code></pre></div></div><div class="tab-pane" id="auth_signup_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: any</p><h2>HTTP status code <a href="http://httpstatus.es/422" target="_blank">422</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: any</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "error": "la matricula o el correo ya existen"
 }</code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_auth_login"><span class="parent">/auth</span>/login</a> <span class="methods"><a href="#auth_login_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_auth_login" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#auth_login_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Crea una sesión para el usuario. Retorna un token y otros datos. (ver especificación)</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="auth_login_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/auth</span>/login</h4></div><div class="modal-body"><div class="alert alert-info"><p>Crea una sesión para el usuario. Retorna un token y otros datos. (ver especificación)</p></div><ul class="nav nav-tabs"><li class="active"><a href="#auth_login_post_request" data-toggle="tab">Request</a></li><li><a href="#auth_login_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="auth_login_post_request"><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>matricula</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>mail</strong>: <em><span class="required">required</span>(string)</em></li><li><strong>password</strong>: <em><span class="required">required</span>(string)</em></li></ul><p><strong>Examples</strong>:</p><div class="examples"><p><strong>loginConMatricula</strong>:<br></p><pre><code>{
@@ -308,7 +309,7 @@ pre code {
       "NRC": "NA"
     }
   ]
-}</code></pre></div></div><div class="tab-pane" id="horario_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>lunes</strong>: <em><span class="required">required</span>(array of )</em><p>lista de materias seleccionadas para el día lunes. la lista esta ordenada por hora en orden ascendente.</p></li><li><strong>martes</strong>: <em><span class="required">required</span>(array of )</em><p>misma que lunes</p></li><li><strong>miercoles</strong>: <em><span class="required">required</span>(array of )</em><p>misma que los demas dias</p></li><li><strong>jueves</strong>: <em><span class="required">required</span>(array of )</em></li><li><strong>viernes</strong>: <em><span class="required">required</span>(array of )</em></li><li><strong>materia</strong>: <em>(object)</em><p>Es el elemento de la lista de días</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+}</code></pre></div></div><div class="tab-pane" id="horario_post_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>Lunes</strong>: <em><span class="required">required</span>(object)</em><p>lista de materias seleccionadas para el día lunes. la lista esta ordenada por hora en orden ascendente.</p></li><li><strong>Martes</strong>: <em><span class="required">required</span>(object)</em><p>misma que lunes</p></li><li><strong>Miercoles</strong>: <em><span class="required">required</span>(object)</em><p>misma que los demas dias</p></li><li><strong>Jueves</strong>: <em><span class="required">required</span>(object)</em></li><li><strong>Viernes</strong>: <em><span class="required">required</span>(object)</em></li><li><strong>materia</strong>: <em>(object)</em><p>Son los datos de la materia que toca en esa hora</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "mat_id": "ICC 001",
   "materias": "Matemáticas Discretas",
   "NRC": "223514",
@@ -319,54 +320,156 @@ pre code {
   ],
   "Lugar": "CCO4 104"
 }</code></pre></div></li></ul><p><strong>Example</strong>:</p><div class="examples"><p><strong>alumnoConMartesyJuevesLibre</strong>:<br></p><pre><code>{
-  "lunes": [
-    {
-    "mat_id": "ICC 001",
-    "materias": "Matemáticas Discretas",
-    "NRC": "223514",
-    "profesor": "Guillermo Escalante Ravidia",
-    "hora": ["13:00","14:00"],
-    "lugar": "CCO4 104" 
-   }  
-  ],
-  "martes": [],
-  "miercoles": [
-    {
-    "mat_id": "ICC 001",
-    "materias": "Matemáticas Discretas",
-    "NRC": "223514",
-    "profesor": "Guillermo Escalante Ravidia",
-    "Hora": ["13:00","14:00"],
-    "Lugar": "CCO4 104" 
-    },
-    {
-    "mat_id": "ICC 002",
-    "materias": "DHPC",
-    "NRC": "223556",
-    "profesor": "Franco Escamilla",
-    "hora": ["15:00","16:00"],
-    "lugar": "CCO4 202" 
-    }
-  ],
-  "jueves": [],
-  "viernes": [
-    {
-    "mat_id": "ICC 001",
-    "materias": "Matemáticas Discretas",
-    "NRC": "223514",
-    "profesor": "Guillermo Escalante Ravidia",
-    "Hora": ["13:00","14:00"],
-    "Lugar": "CCO4 104" 
-    },
-    {
-    "mat_id": "ICC 002",
-    "materias": "DHPC",
-    "NRC": "223556",
-    "profesor": "Franco Escamilla",
-    "hora": ["15:00","16:00"],
-    "lugar": "CCO4 104" 
-    }
-  ]
+"Lunes": {
+  "7:00": null,
+  "8:00": {
+    "mat_id": "CCOS003",
+    "nombre_materia": "Algebra Superior",
+    "NRC": "26158",
+    "profesor": "ARIZA - VELAZQUEZ EDUARDO",
+    "hora": "8:00",
+    "lugar": "1CCO1/001"
+  },
+  "9:00": null,
+  "10:00": null,
+  "11:00": null,
+  "12:00": null,
+  "13:00": {
+    "mat_id": "CCOS002",
+    "nombre_materia": "Matematicas Elementales",
+    "NRC": "28341",
+    "profesor": "GARCIA - JUAREZ PEDRO",
+    "hora": "13:00",
+    "lugar": "1CCO4/401"
+  },
+  "14:00": null,
+  "15:00": null,
+  "16:00": null,
+  "17:00": null,
+  "18:00": null,
+  "19:00": null,
+  "20:00": null
+},
+"Martes": {
+  "7:00": null,
+  "8:00": null,
+  "9:00": null,
+  "10:00": null,
+  "11:00": null,
+  "12:00": null,
+  "13:00": null,
+  "14:00": null,
+  "15:00": null,
+  "16:00": null,
+  "17:00": null,
+  "18:00": null,
+  "19:00": null,
+  "20:00": null
+},
+"Miercoles": {
+  "7:00": null,
+  "8:00": null,
+  "9:00": {
+    "mat_id": "FGUS001",
+    "nombre_materia": "Formacion Humana y Social",
+    "NRC": "20024",
+    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+    "hora": "9:00",
+    "lugar": "1CCO1/001"
+  },
+  "10:00": {
+    "mat_id": "FGUS001",
+    "nombre_materia": "Formacion Humana y Social",
+    "NRC": "20024",
+    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+    "hora": "10:00",
+    "lugar": "1CCO1/001"
+  },
+  "11:00": null,
+  "12:00": null,
+  "13:00": {
+    "mat_id": "CCOS002",
+    "nombre_materia": "Matematicas Elementales",
+    "NRC": "28341",
+    "profesor": "GARCIA - JUAREZ PEDRO",
+    "hora": "13:00",
+    "lugar": "1CCO4/401"
+  },
+  "14:00": {
+    "mat_id": "CCOS002",
+    "nombre_materia": "Matematicas Elementales",
+    "NRC": "28341",
+    "profesor": "GARCIA - JUAREZ PEDRO",
+    "hora": "14:00",
+    "lugar": "1CCO4/401"
+  },
+  "15:00": null,
+  "16:00": null,
+  "17:00": null,
+  "18:00": null,
+  "19:00": null,
+  "20:00": null
+},
+"Jueves": {
+  "7:00": null,
+  "8:00": null,
+  "9:00": null,
+  "10:00": null,
+  "11:00": null,
+  "12:00": null,
+  "13:00": null,
+  "14:00": null,
+  "15:00": null,
+  "16:00": null,
+  "17:00": null,
+  "18:00": null,
+  "19:00": null,
+  "20:00": null
+},
+"Viernes": {
+  "7:00": null,
+  "8:00": null,
+  "9:00": {
+    "mat_id": "FGUS001",
+    "nombre_materia": "Formacion Humana y Social",
+    "NRC": "20024",
+    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+    "hora": "9:00",
+    "lugar": "1CCO1/001"
+  },
+  "10:00": {
+    "mat_id": "FGUS001",
+    "nombre_materia": "Formacion Humana y Social",
+    "NRC": "20024",
+    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+    "hora": "10:00",
+    "lugar": "1CCO1/001"
+  },
+  "11:00": null,
+  "12:00": null,
+  "13:00": {
+    "mat_id": "CCOS002",
+    "nombre_materia": "Matematicas Elementales",
+    "NRC": "28341",
+    "profesor": "GARCIA - JUAREZ PEDRO",
+    "hora": "13:00",
+    "lugar": "1CCO4/401"
+  },
+  "14:00": {
+    "mat_id": "CCOS002",
+    "nombre_materia": "Matematicas Elementales",
+    "NRC": "28341",
+    "profesor": "GARCIA - JUAREZ PEDRO",
+    "hora": "14:00",
+    "lugar": "1CCO4/401"
+  },
+  "15:00": null,
+  "16:00": null,
+  "17:00": null,
+  "18:00": null,
+  "19:00": null,
+  "20:00": null
+}
 }
 </code></pre></div></div></div></div></div></div></div></div><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_horario__matricula_"><span class="parent">/horario</span>/{matricula}</a> <span class="methods"><a href="#horario__matricula__post"><span class="badge badge_post">post</span></a> <a href="#horario__matricula__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_horario__matricula_" class="panel-collapse collapse"><div class="panel-body"><div class="resource-description"><p>para operar sobre el horario del alumno</p></div><div class="list-group"><div onclick="window.location.href = '#horario__matricula__post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>guarda el horario que el alumno haya seleccionado. Se manda el mismo formato que devueleve el endpoint /horario</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#horario__matricula__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Devuelve el horario que el alumno registró. El objeto que retorna es el mismo que retorna el enpoint /horario</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="horario__matricula__post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent">/horario</span>/{matricula}</h4></div><div class="modal-body"><div class="alert alert-info"><p>guarda el horario que el alumno haya seleccionado. Se manda el mismo formato que devueleve el endpoint /horario</p></div><ul class="nav nav-tabs"><li class="active"><a href="#horario__matricula__post_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="horario__matricula__post_request"><h3>URI Parameters</h3><ul><li><strong>matricula</strong>: <em><span class="required">required</span>(string)</em><p>matricula del usuario</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>/plan/201750505</code></pre></div></li></ul><h3>Headers</h3><ul><li><strong>access_token</strong>: <em><span class="required">required</span>(string)</em><p>el token devuelto al iniciar sesion (Authorization bearer)</p></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Type</strong>: object</p><strong>Properties</strong><ul><li><strong>lunes</strong>: <em><span class="required">required</span>(array of )</em><p>lista de materias seleccionadas para el día lunes. la lista esta ordenada por hora en orden ascendente.</p></li><li><strong>martes</strong>: <em><span class="required">required</span>(array of )</em><p>misma que lunes</p></li><li><strong>miercoles</strong>: <em><span class="required">required</span>(array of )</em><p>misma que los demas dias</p></li><li><strong>jueves</strong>: <em><span class="required">required</span>(array of )</em></li><li><strong>viernes</strong>: <em><span class="required">required</span>(array of )</em></li><li><strong>materia</strong>: <em>(object)</em><p>Es el elemento de la lista de días</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
   "mat_id": "ICC 001",

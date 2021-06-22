@@ -1,6 +1,6 @@
 from mongoengine import connect
 from api.utils import *
-from database.models import OpcionMateria, ProgramaDisponible, Plan, Materia, LugarYHora, Profesor
+from database.models import OpcionMateria, ProgramaDisponible, Plan, Materia, LugarYHora, Profesor, EmbeddedProfesor
 import sys
 
 day = { "L":"Lunes",
@@ -19,6 +19,11 @@ elif sys.argv[1] == "production":
     print("connected to "+ production)
 else:
     print("para ejecutar seleccione la base de datos destino {local/production}")
+
+OpcionMateria.drop_collection()
+Profesor.drop_collection()
+ProgramaDisponible.drop_collection()
+
 csvs = getDocsinDir("api/HORARIO/")
 docs = getCSVs(csvs)
 
@@ -44,8 +49,8 @@ for dc, name in zip(docs,csvs):
                         l = LugarYHora(dia = day[d], hora_inicio = int(hrinicio), hora_final = int(hrfinal), salon = obj["SALON"])
                         lyh.append(l)
                     Profesor.objects(nombre = obj["PROFESOR"]).update(upsert = True,nombre = obj["PROFESOR"])
-                    prof = Profesor.objects.get(nombre = obj["PROFESOR"])
-
+                    pr = Profesor.objects.get(nombre = obj["PROFESOR"])
+                    prof = EmbeddedProfesor(nombre = pr.nombre, id = pr.id) 
                     OpcionMateria( 
                             nrc = obj["NRC"],
                             mat_id = obj["CLAVE"],

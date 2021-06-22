@@ -15,20 +15,11 @@ class Recomendacion():
         self.res = []
         self.encontradas = []
         self.dict_horario = {
-            700: {"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            800: {"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            900: {"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1000:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1100:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1200:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1300:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1400:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1500:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1600:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1700:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1800:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            1900:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"},
-            2000:{"Lunes":"-","Martes":"-","Miercoles":"-","Jueves":"-","Viernes":"-"}
+            "Lunes":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None   },
+            "Martes":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None   },
+            "Miercoles":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None   },
+            "Jueves":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None   },
+            "Viernes":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None}
         }
     def show_db(self):
         print(get_db())
@@ -57,7 +48,8 @@ class Recomendacion():
 
         pipeline = [
                 {"$match": {"lugar_y_hora":{"$elemMatch":{"hora_inicio":{"$gte":hra_ini,"$lte":hra_fin}}},
-                            "mat_id": {"$in":base[carrera]}}}
+                            "mat_id": {"$in":base[carrera]}}},
+                {"$project":{"profesor.id":0}}
                 ]
         self.res = list(OpcionMateria.objects.aggregate(pipeline))
         
@@ -68,7 +60,9 @@ class Recomendacion():
                 for d in elem["lugar_y_hora"]:
                     hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
                     for h in range(0,hrs,100):
-                        if self.dict_horario[d["hora_inicio"]+h][d["dia"]] != "-":
+                        key = str(d["hora_inicio"]+h)
+                        key = key[:-2]+":"+key[-2:]
+                        if self.dict_horario[d["dia"]][key] != None:
                             present = True
                 if not present:
                     self.encontradas.append(elem["mat_id"])
@@ -76,11 +70,20 @@ class Recomendacion():
                     for d in elem["lugar_y_hora"]:
                         hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
                         for h in range(0,hrs,100):
-                            self.dict_horario[d["hora_inicio"]+h][d["dia"]] = elem["_id"] +" "+ elem["asignatura"]
+                            key = str(d["hora_inicio"]+h)
+                            key = key[:-2]+":"+key[-2:]
+                            self.dict_horario[d["dia"]][key] = {
+                                "mat_id":elem["mat_id"],
+                                "nombre_materia":elem["asignatura"] ,
+                                "NRC":elem["_id"] ,
+                                "profesor":elem["profesor"]["nombre"],
+                                "hora":key,
+                                "lugar":d["salon"]
+                            }
 
-        return payload
+        return self.dict_horario
 
-
+    #This function is for testing purposes in terminal
     def print_horario(self):
         
         print(self.res)
@@ -88,14 +91,40 @@ class Recomendacion():
             print("{} {} {}".format(r["_id"],r["mat_id"],r["asignatura"]))
         
         print("{:^20}{:^20}{:^20}{:^20}{:^20}{:^20}".format("HORA","Lunes","Martes","Miercoles","Jueves","Viernes\n"))
+        dict_for_print = {
+            "7:00": {"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "8:00": {"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "9:00": {"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "10:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "11:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "12:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "13:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "14:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "15:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "16:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "17:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "18:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "19:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None},
+            "20:00":{"Lunes":None,"Martes":None,"Miercoles":None,"Jueves":None,"Viernes":None}       
+        }
+
+        for dia in self.dict_horario:
+            for hora in self.dict_horario[dia]:
+                if self.dict_horario[dia][hora] != None:
+                    dict_for_print[hora][dia] = self.dict_horario[dia][hora] 
+
         for x in range(700,2100,100):
             p =str(x)+" - "+str(x+100)
+            x2 = str(x)
+            x2 = x2[:-2]+":"+x2[-2:]
             print("{:^20.18}{:20.18}{:20.18}{:20.18}{:20.18}{:20.18}".format(p,
-                self.dict_horario[x]["Lunes"],
-                self.dict_horario[x]["Martes"],
-                self.dict_horario[x]["Miercoles"],
-                self.dict_horario[x]["Jueves"],
-                self.dict_horario[x]["Viernes"]))
+                dict_for_print[x2]["Lunes"]["NRC"]+" " +dict_for_print[x2]["Lunes"]["nombre_materia"] if dict_for_print[x2]["Lunes"]!=None else "-",
+                dict_for_print[x2]["Martes"]["NRC"]+" " +dict_for_print[x2]["Martes"]["nombre_materia"]if dict_for_print[x2]["Martes"]!=None else "-",
+                dict_for_print[x2]["Miercoles"]["NRC"]+" " +dict_for_print[x2]["Miercoles"]["nombre_materia"]if dict_for_print[x2]["Miercoles"]!=None else "-",
+                dict_for_print[x2]["Jueves"]["NRC"]+" " +dict_for_print[x2]["Jueves"]["nombre_materia"]if dict_for_print[x2]["Jueves"]!=None else "-",
+                dict_for_print[x2]["Viernes"]["NRC"]+" " +dict_for_print[x2]["Viernes"]["nombre_materia"]if dict_for_print[x2]["Viernes"]!=None else "-"))
+
+
             
         print("materias recomendadas {}".format(len(self.encontradas)))
         print(self.encontradas)

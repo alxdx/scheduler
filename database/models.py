@@ -40,6 +40,10 @@ class Profesor(db.DynamicDocument):
     nombre=db.StringField(required=True,unique = True)
     #cubiculo= "CCO2 102"
 
+class EmbeddedProfesor(db.EmbeddedDocument):
+    nombre = db.StringField()
+    id = db.ReferenceField(Profesor)
+
 class LugarYHora(db.EmbeddedDocument):
     dia = db.StringField(required=True)
     hora_inicio = db.IntField(required = True)
@@ -51,7 +55,7 @@ class OpcionMateria(db.Document):
     nrc=db.StringField(required=True,primary_key=True)
     asignatura=db.StringField(required=True)
     lugar_y_hora=db.EmbeddedDocumentListField(LugarYHora,required=True)
-    profesor=db.ReferenceField('Profesor')
+    profesor=db.EmbeddedDocumentField(EmbeddedProfesor,required=True)
 
 class ProgramaDisponible(db.Document):
     carrera = db.StringField(required=True,unique=True)

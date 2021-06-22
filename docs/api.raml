@@ -28,13 +28,18 @@ version: .01
             password:
               type: string
               required: true
+            materias_cursadas:
+              description: los mat_id de las materias que el alumno ya ha cursado. Si se manda una lista vacia despues se puede actualizar con la ruta /plan/matricula
+              type : []
+              required: false
           example:
             {
               "matricula" : "201750505",
               "name": "pepe pollo",
               "mail": "correo@mail.com",
               "carrera": "ITI",
-              "password" : "jijiji"
+              "password" : "jijiji",
+              "materias_cursadas":[]
             }
       responses:
         200:
@@ -447,33 +452,31 @@ version: .01
         body:
           application/json:
             description: |
-              UN JSON con los dias de la semana como llaves. Cada uno con una 
-              lista de materias seleccionadas por dia.
-              la lista esta ordenada por hora en orden ascendente.
-              Puede ser vacia.
+              UN JSON con los dias de la semana como llaves. Cada día de la semana tiene una hora como llave cuyo valor es la materia que corresponde con esa hora.
+              Cuando no hay materia para esa hora el valor es null
             properties:
-              lunes:
+              Lunes:
                 description: |
                   lista de materias seleccionadas para el día lunes.
                   la lista esta ordenada por hora en orden ascendente.
                 required: true
-                type: object[]
-              martes:
+                type: object
+              Martes:
                 description: misma que lunes
                 required: true
-                type: object[]
-              miercoles:
+                type: object
+              Miercoles:
                 description: misma que los demas dias 
                 required: true
-                type: object[]
-              jueves: 
+                type: object
+              Jueves: 
                 required: true
-                type: object[]
-              viernes: 
+                type: object
+              Viernes: 
                 required: true
-                type: object[]
+                type: object
               materia: 
-                description: Es el elemento de la lista de días
+                description: Son los datos de la materia que toca en esa hora
                 type: object
                 required: false
                 example: {
@@ -487,54 +490,156 @@ version: .01
             examples:
               alumnoConMartesyJuevesLibre: |
                 {
-                  "lunes": [
-                    {
-                    "mat_id": "ICC 001",
-                    "materias": "Matemáticas Discretas",
-                    "NRC": "223514",
-                    "profesor": "Guillermo Escalante Ravidia",
-                    "hora": ["13:00","14:00"],
-                    "lugar": "CCO4 104" 
-                   }  
-                  ],
-                  "martes": [],
-                  "miercoles": [
-                    {
-                    "mat_id": "ICC 001",
-                    "materias": "Matemáticas Discretas",
-                    "NRC": "223514",
-                    "profesor": "Guillermo Escalante Ravidia",
-                    "Hora": ["13:00","14:00"],
-                    "Lugar": "CCO4 104" 
-                    },
-                    {
-                    "mat_id": "ICC 002",
-                    "materias": "DHPC",
-                    "NRC": "223556",
-                    "profesor": "Franco Escamilla",
-                    "hora": ["15:00","16:00"],
-                    "lugar": "CCO4 202" 
-                    }
-                  ],
-                  "jueves": [],
-                  "viernes": [
-                    {
-                    "mat_id": "ICC 001",
-                    "materias": "Matemáticas Discretas",
-                    "NRC": "223514",
-                    "profesor": "Guillermo Escalante Ravidia",
-                    "Hora": ["13:00","14:00"],
-                    "Lugar": "CCO4 104" 
-                    },
-                    {
-                    "mat_id": "ICC 002",
-                    "materias": "DHPC",
-                    "NRC": "223556",
-                    "profesor": "Franco Escamilla",
-                    "hora": ["15:00","16:00"],
-                    "lugar": "CCO4 104" 
-                    }
-                  ]
+                "Lunes": {
+                  "7:00": null,
+                  "8:00": {
+                    "mat_id": "CCOS003",
+                    "nombre_materia": "Algebra Superior",
+                    "NRC": "26158",
+                    "profesor": "ARIZA - VELAZQUEZ EDUARDO",
+                    "hora": "8:00",
+                    "lugar": "1CCO1/001"
+                  },
+                  "9:00": null,
+                  "10:00": null,
+                  "11:00": null,
+                  "12:00": null,
+                  "13:00": {
+                    "mat_id": "CCOS002",
+                    "nombre_materia": "Matematicas Elementales",
+                    "NRC": "28341",
+                    "profesor": "GARCIA - JUAREZ PEDRO",
+                    "hora": "13:00",
+                    "lugar": "1CCO4/401"
+                  },
+                  "14:00": null,
+                  "15:00": null,
+                  "16:00": null,
+                  "17:00": null,
+                  "18:00": null,
+                  "19:00": null,
+                  "20:00": null
+                },
+                "Martes": {
+                  "7:00": null,
+                  "8:00": null,
+                  "9:00": null,
+                  "10:00": null,
+                  "11:00": null,
+                  "12:00": null,
+                  "13:00": null,
+                  "14:00": null,
+                  "15:00": null,
+                  "16:00": null,
+                  "17:00": null,
+                  "18:00": null,
+                  "19:00": null,
+                  "20:00": null
+                },
+                "Miercoles": {
+                  "7:00": null,
+                  "8:00": null,
+                  "9:00": {
+                    "mat_id": "FGUS001",
+                    "nombre_materia": "Formacion Humana y Social",
+                    "NRC": "20024",
+                    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+                    "hora": "9:00",
+                    "lugar": "1CCO1/001"
+                  },
+                  "10:00": {
+                    "mat_id": "FGUS001",
+                    "nombre_materia": "Formacion Humana y Social",
+                    "NRC": "20024",
+                    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+                    "hora": "10:00",
+                    "lugar": "1CCO1/001"
+                  },
+                  "11:00": null,
+                  "12:00": null,
+                  "13:00": {
+                    "mat_id": "CCOS002",
+                    "nombre_materia": "Matematicas Elementales",
+                    "NRC": "28341",
+                    "profesor": "GARCIA - JUAREZ PEDRO",
+                    "hora": "13:00",
+                    "lugar": "1CCO4/401"
+                  },
+                  "14:00": {
+                    "mat_id": "CCOS002",
+                    "nombre_materia": "Matematicas Elementales",
+                    "NRC": "28341",
+                    "profesor": "GARCIA - JUAREZ PEDRO",
+                    "hora": "14:00",
+                    "lugar": "1CCO4/401"
+                  },
+                  "15:00": null,
+                  "16:00": null,
+                  "17:00": null,
+                  "18:00": null,
+                  "19:00": null,
+                  "20:00": null
+                },
+                "Jueves": {
+                  "7:00": null,
+                  "8:00": null,
+                  "9:00": null,
+                  "10:00": null,
+                  "11:00": null,
+                  "12:00": null,
+                  "13:00": null,
+                  "14:00": null,
+                  "15:00": null,
+                  "16:00": null,
+                  "17:00": null,
+                  "18:00": null,
+                  "19:00": null,
+                  "20:00": null
+                },
+                "Viernes": {
+                  "7:00": null,
+                  "8:00": null,
+                  "9:00": {
+                    "mat_id": "FGUS001",
+                    "nombre_materia": "Formacion Humana y Social",
+                    "NRC": "20024",
+                    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+                    "hora": "9:00",
+                    "lugar": "1CCO1/001"
+                  },
+                  "10:00": {
+                    "mat_id": "FGUS001",
+                    "nombre_materia": "Formacion Humana y Social",
+                    "NRC": "20024",
+                    "profesor": "ZENTENO - VAZQUEZ ANA CLAUDIA",
+                    "hora": "10:00",
+                    "lugar": "1CCO1/001"
+                  },
+                  "11:00": null,
+                  "12:00": null,
+                  "13:00": {
+                    "mat_id": "CCOS002",
+                    "nombre_materia": "Matematicas Elementales",
+                    "NRC": "28341",
+                    "profesor": "GARCIA - JUAREZ PEDRO",
+                    "hora": "13:00",
+                    "lugar": "1CCO4/401"
+                  },
+                  "14:00": {
+                    "mat_id": "CCOS002",
+                    "nombre_materia": "Matematicas Elementales",
+                    "NRC": "28341",
+                    "profesor": "GARCIA - JUAREZ PEDRO",
+                    "hora": "14:00",
+                    "lugar": "1CCO4/401"
+                  },
+                  "15:00": null,
+                  "16:00": null,
+                  "17:00": null,
+                  "18:00": null,
+                  "19:00": null,
+                  "20:00": null
+                }
                 }
   /{matricula}:
     description: para operar sobre el horario del alumno

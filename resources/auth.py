@@ -13,6 +13,8 @@ class SignupApi(Resource):
         body=request.get_json()
         user=Alumno(**body)
         user.hash_password()
+        if "materias_cursadas" in body and len(body.get("materias_cursadas")) > 0:
+            user.last_updated = datetime.date.today()
         try:
             user.save()
         except NotUniqueError as e:
@@ -26,7 +28,7 @@ class LoginApi(Resource):
     def post(self):
         body=request.get_json()
         try:
-            if body.get("mail")=="":
+            if "mail" not in body or body.get("mail")=="":
                 user=Alumno.objects.get(matricula=body.get("matricula"))
             else:
                 user=Alumno.objects.get(mail=body.get("mail")) 
