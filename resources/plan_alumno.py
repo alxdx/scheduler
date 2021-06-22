@@ -62,8 +62,8 @@ class PlanDeAlumno(Resource):
         if alumno.carrera == None:
             return {"msg":"aun no has registrado una carrera"},400
         materias_cursadas = self.get_materias_cursadas(alumno.carrera,alumno.materias_cursadas)
-        lst_actualizacion = ""
-        if alumno.last_updated.strftime('%d-%m-%Y') != None:
+        lst_actualizacion = "Nunca"
+        if alumno.last_updated != None:
             lst_actualizacion = alumno.last_updated.strftime('%d-%m-%Y')
         payload = {"matricula": alumno.matricula,
                 "carrera": alumno.carrera,
