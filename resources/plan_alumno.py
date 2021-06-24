@@ -34,7 +34,9 @@ class PlanDeAlumno(Resource):
                 }}]
         ans = list(Plan.objects().aggregate(pipeline))
         ans = ans[0]["materias"]
-        print(ans)
+        #print(ans)
+        #print(":::::")
+        #print(materias_aprobadas)
         for i,elem in enumerate(ans):
             ans[i]["aprobada"]=False
             for j,apr in enumerate(materias_aprobadas):
@@ -70,6 +72,8 @@ class PlanDeAlumno(Resource):
                 "materias": materias_cursadas,
                 "last_updated": lst_actualizacion 
                 }
+        print("------------------PAYLOAD PLAN ALUMNO------------------------")
+        print(payload)
         return payload,200
 
     @jwt_required()
