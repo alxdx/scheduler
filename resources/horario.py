@@ -19,7 +19,7 @@ class HorarioRecomendado(Resource):
                             int(body["hra_inicio"].replace(":","")),
                             int(body["hra_final"].replace(":","")),
                             cursadas = alumno.materias_cursadas)
-        #p.print_horario()
+        p.print_horario()
         return res,200
 
             
