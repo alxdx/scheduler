@@ -10,9 +10,10 @@ class Config(object):
     JWT_SECRET_KEY=DEVELOPMENT_JWT_KEY
 
 class ProductionConfig(Config):
-    PRODUCTION_JWT_KEY=os.environ.get("PRODUCTION_JWT_KEY")
-    JWT_SECRET_KEY=PRODUCTION_JWT_KEY
-    
+    PRODUCTION_JWT_KEY = os.environ.get("PRODUCTION_JWT_KEY")
+    JWT_SECRET_KEY = PRODUCTION_JWT_KEY
+    PROPAGATE_EXCEPTIONS = True
+
 class DevelopmentConfig(Config):
     ENV="development"
     DEBUG = True
