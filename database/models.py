@@ -64,4 +64,5 @@ class ProgramaDisponible(db.Document):
 class HorarioAlumno(db.Document):
     created_by= db.ReferenceField('Alumno',reverse_delete_rule=db.DENY)
     materias = db.ListField(db.ReferenceField('OpcionMateria'),required=True)
+
 Alumno.register_delete_rule(HorarioAlumno,'horario',db.CASCADE)

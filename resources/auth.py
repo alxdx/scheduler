@@ -12,6 +12,8 @@ class SignupApi(Resource):
     def post(self):
         body=request.get_json()
         user=Alumno(**body)
+        # TODO hay que validar acda dato del body
+        user.carrera = user.carrera.upper()
         user.hash_password()
         if "materias_cursadas" in body and len(body.get("materias_cursadas")) > 0:
             user.last_updated = datetime.date.today()

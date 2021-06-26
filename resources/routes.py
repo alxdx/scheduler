@@ -6,6 +6,7 @@ from .programa_disponible import Programa
 from .documentation import Documentacion
 from .horario import HorarioRecomendado
 from .horario_alumno import HorarioDeAlumno
+
 def initialize_routes(api):
     api.add_resource(StatusTest,"/")
     api.add_resource(SignupApi,"/api/auth/signup")

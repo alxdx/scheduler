@@ -6,13 +6,15 @@ import re
 
 class Recomendacion():
 
-    #constructor with no arguments look automatically for the connection of the parent instance
-    #if 1 argument is passed then  stablish a connection with the host passed
+    #constructor with no arguments looks automatically for the connection of the parent instance
+    #if 1 argument is passed then it stablishes a connection with the host passed
     def __init__(self,*args):
+
         if  len(args) == 1:
             host = os.environ.get(args[0])
             connect(host = host)
-        self.res = []
+
+        self.info_materias = []
         self.encontradas = []
         self.dict_horario = {
             "Lunes":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None   },
@@ -21,9 +23,24 @@ class Recomendacion():
             "Jueves":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None   },
             "Viernes":{"7:00":None, "8:00":None,"9:00":None,"10:00":None,"11:00":None,"12:00":None,"13:00":None,"14:00":None,"15:00":None,"16:00":None,"17:00":None,"18:00":None,"19:00":None,"20:00":None}
         }
+
     def show_db(self):
         print(get_db())
 
+    def set_horario(self,horario:dict ):
+        self.dict_horario = horario
+    def set_info_materias(self,info_materias:list):
+        self.info_materias = info_materias
+
+    def get_nrcs(self):
+        payload = []
+        for dia in self.dict_horario:
+            for hora in self.dict_horario[dia]:
+                if self.dict_horario[dia][hora] != None:
+                    if self.dict_horario[dia][hora]["NRC"] not in payload:
+                        payload.append(self.dict_horario[dia][hora]["NRC"])
+        return payload
+        
     def get_recomendacion(self,carrera, hra_ini:int, hra_fin:int, max_val = 6, cursadas = [] ,requeridas = []) -> list:
         
         if max_val > 6:
@@ -51,10 +68,14 @@ class Recomendacion():
                             "mat_id": {"$in":base[carrera]}}},
                 {"$project":{"profesor.id":0}}
                 ]
-        self.res = list(OpcionMateria.objects.aggregate(pipeline))
+        self.info_materias = list(OpcionMateria.objects.aggregate(pipeline))
+        
+        return self.make_horario_json()
+
+    def make_horario_json(self):
         
         payload = []
-        for elem in self.res:
+        for elem in self.info_materias:
             if elem["mat_id"] not in self.encontradas:
                 present = False
                 for d in elem["lugar_y_hora"]:
@@ -80,14 +101,14 @@ class Recomendacion():
                                 "hora":key,
                                 "lugar":d["salon"]
                             }
-
         return self.dict_horario
+
 
     #This function is for testing purposes in terminal
     def print_horario(self):
         
-        print(self.res)
-        for r in self.res:
+        print(self.info_materias)
+        for r in self.info_materias:
             print("{} {} {}".format(r["_id"],r["mat_id"],r["asignatura"]))
         
         print("{:^20}{:^20}{:^20}{:^20}{:^20}{:^20}".format("HORA","Lunes","Martes","Miercoles","Jueves","Viernes\n"))

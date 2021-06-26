@@ -63,6 +63,7 @@ class PlanDeAlumno(Resource):
             return {"msg":"la matricula no corresponde con el usuario logueado"}, 401
         if alumno.carrera == None:
             return {"msg":"aun no has registrado una carrera"},400
+
         materias_cursadas = self.get_materias_cursadas(alumno.carrera,alumno.materias_cursadas)
         lst_actualizacion = "Nunca"
         if alumno.last_updated != None:
