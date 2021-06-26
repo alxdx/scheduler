@@ -7,7 +7,9 @@ day = { "L":"Lunes",
         "A":"Martes",
         "M":"Miercoles",
         "J":"Jueves",
-        "V":"Viernes"}
+        "V":"Viernes",
+        "S":"Sabado"}
+
 
 production = os.environ.get('MONGODATABASE')
 local = 'mongodb://localhost/scheduler'
