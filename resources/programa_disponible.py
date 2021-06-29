@@ -95,7 +95,7 @@ class Programa(Resource):
             if mat_id:
                 chooser["mat_id"] = True
             if profesor:
-                chooser["profesor"] = True
+                chooser["profesor.id"] = True
             if horarios:
                 chooser["lugar_y_hora"]  = True
             ans = OpcionMateria.objects.aggregate([
@@ -105,7 +105,7 @@ class Programa(Resource):
             ans = list(ans)
             if profesor:
                 for r in ans:
-                    r["profesor"] = Profesor.objects.get(id=r["profesor"]).nombre
+                    r["profesor"] = Profesor.objects.get(id=r["profesor"]["id"]).nombre
             return {"carrera":carrera,"nivel":nivel,"materias":ans}
         else:
             return False
