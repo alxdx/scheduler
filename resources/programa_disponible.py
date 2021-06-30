@@ -106,6 +106,12 @@ class Programa(Resource):
             if profesor:
                 for r in ans:
                     r["profesor"] = Profesor.objects.get(id=r["profesor"]["id"]).nombre
+            for r in ans:
+                for elem in r["lugar_y_hora"]:
+                    elem["hora_inicio"] = str(elem["hora_inicio"])
+                    elem["hora_final"] = str(elem["hora_final"])
+                    elem["hora_inicio"] = elem["hora_inicio"][:-2]+":"+elem["hora_inicio"][-2:]
+                    elem["hora_final"] = elem["hora_final"][:-2]+":"+elem["hora_final"][-2:]
             return {"carrera":carrera,"nivel":nivel,"materias":ans}
         else:
             return False
