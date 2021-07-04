@@ -89,7 +89,7 @@ class Programa(Resource):
         else:
             return None
         if ans != None:
-            chooser = { "nrc":"$_id",
+            chooser = { "NRC":"$_id",
                         "asignatura": True
                         }
             if mat_id:

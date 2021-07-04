@@ -41,6 +41,6 @@ class HorarioDeAlumno(Resource):
         horario = HorarioAlumno(materias = reco.get_nrcs(), created_by = alumno)
         horario.save()
         alumno.update(horario = horario)
-        return 200
+        return body,200
 
 

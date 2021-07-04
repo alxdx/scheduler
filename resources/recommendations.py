@@ -70,7 +70,7 @@ class Recomendacion():
                             "mat_id": {"$in":base[carrera]}
                             }
                             },
-                {"$project":{"profesor.id":0}}
+                {"$project":{"NRC":"$_id","mat_id":True,"asignatura":True,"lugar_y_hora":True,"profesor.nombre":True}}
                 ]
         self.info_materias = list(OpcionMateria.objects.aggregate(pipeline))
         
@@ -78,7 +78,8 @@ class Recomendacion():
 
     def make_horario_json(self,requeridas):
         if len(requeridas) > 0:
-            pipeline = [{"$match":{"_id":{"$in":requeridas}}}]
+            pipeline = [{"$match":{"_id":{"$in":requeridas}}}
+                    ,{"$project":{"NRC":"$_id","mat_id":True,"asignatura":True,"lugar_y_hora":True,"profesor":True}}]
             obl = list(OpcionMateria.objects.aggregate(pipeline))
             for o in obl:
                 self.encontradas.append(o["mat_id"])
