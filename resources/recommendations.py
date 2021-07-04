@@ -3,6 +3,7 @@ import os
 from database.models import OpcionMateria,Materia,Plan
 import pandas as pd
 import re
+from random import shuffle
 
 class Recomendacion():
 
@@ -66,16 +67,35 @@ class Recomendacion():
 
         pipeline = [
                 {"$match": {"lugar_y_hora":{"$elemMatch":{"hora_inicio":{"$gte":hra_ini,"$lte":hra_fin}}},
-                            "mat_id": {"$in":base[carrera]}}},
+                            "mat_id": {"$in":base[carrera]}
+                            }
+                            },
                 {"$project":{"profesor.id":0}}
                 ]
         self.info_materias = list(OpcionMateria.objects.aggregate(pipeline))
         
-        return self.make_horario_json()
+        return self.make_horario_json(requeridas)
 
-    def make_horario_json(self):
-        
-        payload = []
+    def make_horario_json(self,requeridas):
+        if len(requeridas) > 0:
+            pipeline = [{"$match":{"_id":{"$in":requeridas}}}]
+            obl = list(OpcionMateria.objects.aggregate(pipeline))
+            for o in obl:
+                self.encontradas.append(o["mat_id"])
+                for d in o["lugar_y_hora"]:
+                    hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
+                    for h in range(0,hrs,100):
+                        key = str(d["hora_inicio"]+h)
+                        key = key[:-2]+":"+key[-2:]
+                        self.dict_horario[d["dia"]][key] = {
+                            "mat_id":o["mat_id"],
+                            "nombre_materia":o["asignatura"] ,
+                            "NRC":o["_id"] ,
+                            "profesor":o["profesor"]["nombre"],
+                            "hora":key,
+                            "lugar":d["salon"]
+                        }
+        shuffle(self.info_materias)
         for elem in self.info_materias:
             if elem["mat_id"] not in self.encontradas:
                 present = False
@@ -88,7 +108,6 @@ class Recomendacion():
                             present = True
                 if not present:
                     self.encontradas.append(elem["mat_id"])
-                    payload.append(elem)
                     for d in elem["lugar_y_hora"]:
                         hrs = d["hora_final"] - d["hora_inicio"] - 59 + 100
                         for h in range(0,hrs,100):
