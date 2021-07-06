@@ -76,7 +76,7 @@ class Recomendacion():
         
         return self.make_horario_json(requeridas)
 
-    def make_horario_json(self,requeridas):
+    def make_horario_json(self,requeridas=[]):
         if len(requeridas) > 0:
             pipeline = [{"$match":{"_id":{"$in":requeridas}}}
                     ,{"$project":{"NRC":"$_id","mat_id":True,"asignatura":True,"lugar_y_hora":True,"profesor":True}}]
