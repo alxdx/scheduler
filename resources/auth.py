@@ -18,8 +18,8 @@ class SignupApi(Resource):
                    matricula = body.get('matricula'), 
                    name = body.get('name'),
                    mail = body.get('mail'),
-                   password = body.get('carrera'),
-                   carrera = body.get('password') 
+                   carrera= body.get('carrera'),
+                   password  = body.get('password') 
                 )
         # TODO hay que validar cada dato del body
         user.carrera = user.carrera.upper()
