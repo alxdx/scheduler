@@ -15,10 +15,10 @@ class SignupApi(Resource):
             return {"error":"las contraseñas son diferentes"},422
         
         user=Alumno(
-                   matricula = body.get('matricula') 
-                   name = body.get('name') 
-                   mail = body.get('mail') 
-                   password = body.get('carrera') 
+                   matricula = body.get('matricula'), 
+                   name = body.get('name'),
+                   mail = body.get('mail'),
+                   password = body.get('carrera'),
                    carrera = body.get('password') 
                 )
         # TODO hay que validar cada dato del body
