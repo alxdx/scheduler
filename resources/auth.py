@@ -11,8 +11,17 @@ import datetime, random
 class SignupApi(Resource):
     def post(self):
         body=request.get_json()
-        user=Alumno(**body)
-        # TODO hay que validar acda dato del body
+        if body.get(password) != body.get(confirmPassword):
+            return {"error":"las contraseñas son diferentes"},422
+        
+        user=Alumno(
+                   matricula = body.get('matricula') 
+                   name = body.get('name') 
+                   mail = body.get('mail') 
+                   password = body.get('carrera') 
+                   carrera = body.get('password') 
+                )
+        # TODO hay que validar cada dato del body
         user.carrera = user.carrera.upper()
         user.hash_password()
         if "materias_cursadas" in body and len(body.get("materias_cursadas")) > 0:
